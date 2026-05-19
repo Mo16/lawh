@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/mohammedchoudhury/Downloads/lawh/public/assets/img/logo.png)",
+      "Bash(npx --no-install tsc --noEmit)",
+      "Bash(grep -nC 2 \"LOCATIONS\" /Users/mohammedchoudhury/Downloads/lawh/components/templates/location-page.tsx)"
+    ]
+  }
+}

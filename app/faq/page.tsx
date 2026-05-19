@@ -1,0 +1,98 @@
+import type { Metadata } from "next";
+import { Phone } from "lucide-react";
+import { SITE } from "@/data/site";
+import { FAQS } from "@/data/faqs";
+import { Hero } from "@/components/sections/hero";
+import { TrustBar, FinalCTA } from "@/components/sections/blocks";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
+} from "@/components/ui/accordion";
+
+export const metadata: Metadata = {
+  title: "Water Heater FAQ — Common Questions Answered",
+  description: `Common questions about water heaters, tankless installs, repairs, financing, and emergency service. ${SITE.name} — Los Angeles.`,
+  alternates: { canonical: `${SITE.url}/faq` },
+};
+
+const SECTIONS = [
+  { title: "General Questions", key: "general" as const },
+  { title: "Water Heaters", key: "tank" as const },
+  { title: "Tankless Water Heaters", key: "tankless" as const },
+  { title: "Emergency Service", key: "emergency" as const },
+  { title: "Maintenance", key: "maintenance" as const },
+];
+
+export default function FaqPage() {
+  // FAQ schema for SEO
+  const allFaqs = SECTIONS.flatMap(s => FAQS[s.key]);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: allFaqs.map(f => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <Hero
+        badge="FAQ"
+        headline="Water Heater"
+        highlight="Questions Answered"
+        subheadline="Everything you've ever wondered about water heaters — answered by LA's most-trusted specialists. If you don't see your question, just call us."
+        image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&h=1000&fit=crop&q=80"
+        imageAlt="Water heater frequently asked questions"
+        bullets={[`${allFaqs.length}+ answered questions`, "All categories", "Updated regularly", "Real expert answers"]}
+      />
+
+      <TrustBar />
+
+      {/* FAQ sections */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="container-narrow">
+          <div className="space-y-10 sm:space-y-14">
+            {SECTIONS.map((section) => (
+              <div key={section.key}>
+                <Badge variant="default" className="mb-3">{section.title}</Badge>
+                <h2 className="mb-6 text-2xl sm:text-3xl">{section.title}</h2>
+                <div className="rounded-2xl border border-border bg-card p-2 shadow-card sm:p-4">
+                  <Accordion type="single" collapsible>
+                    {FAQS[section.key].map((f, i) => (
+                      <AccordionItem key={i} value={`${section.key}-${i}`} className="px-3 sm:px-4">
+                        <AccordionTrigger>{f.q}</AccordionTrigger>
+                        <AccordionContent>{f.a}</AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 rounded-2xl bg-primary-50 p-8 text-center">
+            <h2 className="text-2xl">Still have questions?</h2>
+            <p className="mx-auto mt-3 max-w-md text-base text-muted-foreground">
+              Call us directly. A real person — not an automated system — will answer.
+            </p>
+            <Button asChild size="xl" variant="call" className="mt-6">
+              <a href={SITE.phoneTel}>
+                <Phone className="h-5 w-5" /> Call {SITE.phoneDisplay}
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <FinalCTA />
+    </>
+  );
+}
