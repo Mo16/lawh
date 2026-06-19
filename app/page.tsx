@@ -40,7 +40,7 @@ export default function HomePage() {
           "Same-day installation",
           "Up to $1,900 in rebates",
           "30-minute response",
-          "Lic. #" + SITE.license,
+          "Licensed",
         ]}
       />
 
@@ -232,7 +232,7 @@ export default function HomePage() {
 
       <WhyUs items={[
         `${SITE.years}+ years serving Los Angeles`,
-        `Lic. #${SITE.license}`,
+        `Licensed`,
         "30-minute average emergency response",
         `${SITE.rating}/5 rating, ${SITE.reviewCount}+ reviews`,
         "Same-day install on most jobs",

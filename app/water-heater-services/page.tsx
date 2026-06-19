@@ -8,7 +8,7 @@ const service = SERVICE_BY_SLUG["water-heater-services"];
 export const metadata: Metadata = {
   title: "Water Heater Services Los Angeles — Install, Repair & Replace | LA Water Heaters",
   description:
-    "Same-day water heater services in Los Angeles. Install, repair, replace, and maintain tank water heaters. All major brands. Lic. #984574. 4.9★ from 819+ reviews. Call (818) 555-0173 for free estimate.",
+    "Same-day water heater services in Los Angeles. Install, repair, replace, and maintain tank water heaters. All major brands. 4.9★ from 819+ reviews. Call (818) 555-0173 for free estimate.",
   alternates: { canonical: `${SITE.url}/water-heater-services` },
   keywords: [
     "water heater services los angeles",

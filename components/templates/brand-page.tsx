@@ -113,7 +113,7 @@ export function BrandPageTemplate({ brand }: BrandPageProps) {
                   <span>({SITE.reviewCount}+ reviews)</span>
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-primary-600" /> Lic. #{SITE.license}
+                  <ShieldCheck className="h-3.5 w-3.5 text-primary-600" /> Licensed
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-3.5 w-3.5 text-green-600" /> 24/7 Available

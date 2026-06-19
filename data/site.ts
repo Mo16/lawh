@@ -8,7 +8,7 @@ export const SITE = {
   phone: "(818) 555-0173",
   phoneTel: "tel:+18185550173",
   phoneDisplay: "818-555-0173",
-  email: "service@lawaterheaters.com",
+  email: "lawaterheaters@gmail.com",
   address: {
     street: "12450 Ventura Blvd",
     city: "Studio City",
@@ -16,16 +16,13 @@ export const SITE = {
     zip: "91604",
     full: "12450 Ventura Blvd, Studio City, CA 91604",
   },
-  license: "984574",
   founded: 2008,
   years: new Date().getFullYear() - 2008,
   rating: 4.9,
   reviewCount: 819,
   hours: "24/7 — Available Now",
   social: {
-    google: "https://g.page/lawaterheaters",
-    yelp: "https://yelp.com/biz/lawaterheaters",
-    facebook: "https://facebook.com/lawaterheaters",
+    yelp: "https://www.yelp.com/biz/la-water-heaters-los-angeles",
   },
   trustBadges: [
     "Licensed & Insured",

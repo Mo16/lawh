@@ -20,7 +20,7 @@ import {
 export function TrustBar() {
   const items = [
     { icon: Star, value: `${SITE.rating}/5`, label: `${SITE.reviewCount}+ reviews` },
-    { icon: ShieldCheck, value: "Licensed", label: `Lic. #${SITE.license}` },
+    { icon: ShieldCheck, value: "Licensed", label: `& insured` },
     { icon: Clock, value: "30 min", label: "Avg response" },
     { icon: Award, value: "20+ yrs", label: "Serving LA" },
     { icon: Truck, value: "Same-day", label: "Service" },
@@ -523,7 +523,7 @@ export function FinalCTA({
           <span>✓ Free estimates</span>
           <span>✓ Same-day service</span>
           <span>✓ 24/7 emergency</span>
-          <span>✓ Lic. #{SITE.license}</span>
+          <span>✓ Licensed</span>
         </div>
       </div>
     </section>

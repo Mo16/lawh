@@ -29,7 +29,7 @@ export default function TermsPage() {
           </div>
           <div>
             <h2 className="mb-3 text-xl">License</h2>
-            <p>{SITE.name} is licensed and insured. Lic. #{SITE.license}.</p>
+            <p>{SITE.name} is licensed and insured.</p>
           </div>
         </div>
       </div>

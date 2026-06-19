@@ -74,7 +74,7 @@ export const SERVICES: ServiceData[] = [
     ],
     whyUs: [
       "20+ years serving Los Angeles",
-      "Lic. #984574, fully insured",
+      "Licensed & insured",
       "30-minute average response time",
       "4.9-star rating, 819+ reviews",
       "Same-day service guaranteed",
@@ -168,7 +168,7 @@ export const SERVICES: ServiceData[] = [
     whyUs: [
       "30-minute average response time",
       "Free diagnosis on every service call",
-      "Lic. #984574 plumbers",
+      "Licensed plumbers",
       "All brands, all models repaired",
       "1-year repair warranty included",
       "No overtime or weekend surcharges",

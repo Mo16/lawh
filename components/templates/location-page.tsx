@@ -179,7 +179,7 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
       <WhyUs items={[
         `Serving ${location.name} since ${SITE.founded}`,
         `${SITE.years}+ years of LA experience`,
-        `Lic. #${SITE.license}`,
+        `Licensed`,
         "30-minute average response",
         `${SITE.rating}/5 star rating across LA`,
         "Same-day service guarantee",

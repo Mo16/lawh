@@ -3,7 +3,7 @@ export interface FAQ { q: string; a: string; }
 export const FAQS: Record<string, FAQ[]> = {
   general: [
     { q: "How quickly can you get to my home?", a: "Our average response time across Los Angeles is 30 minutes. For non-emergency installs, we offer same-day or next-day appointments based on your preference." },
-    { q: "Are you licensed and insured?", a: "Yes. We're fully licensed (Lic. #984574), bonded, and carry full liability and workers' compensation insurance." },
+    { q: "Are you licensed and insured?", a: "Yes. We're fully licensed, bonded, and carry full liability and workers' compensation insurance." },
     { q: "Do you offer free estimates?", a: "Yes. Every installation and replacement quote is free, in-home, and in writing — with no obligation." },
     { q: "What's your service area?", a: "We serve all of Los Angeles including Hollywood, Beverly Hills, Santa Monica, Pasadena, Burbank, Glendale, and surrounding communities." },
     { q: "Do you offer financing?", a: "Yes. We offer flexible monthly payment plans from as low as $89/mo on qualifying installations, with terms up to 60 months. Apply in 60 seconds with a soft credit pull — no impact to your score." },
@@ -48,43 +48,33 @@ export interface Review {
 
 export const REVIEWS: Review[] = [
   {
-    name: "Sarah K.", location: "Hollywood", rating: 5,
-    text: "Called at 7am with a leaking water heater. Tech arrived by 8:15, had a new unit in by noon. Upfront pricing, totally professional, and took the old one away. Best service experience I've had with any contractor in LA.",
-    service: "Water Heater Replacement", date: "2 weeks ago",
+    name: "Kevin R.", location: "Sherman Oaks", rating: 5,
+    text: "Our 13 year old tankless died over New Years. Contacted LA Water Heaters and they were out early the next day to put in a new and improved one. Very knowledgeable, courteous, professional and fast. Can't recommend more highly.",
+    service: "Tankless Replacement", date: "via Yelp",
   },
   {
-    name: "Michael R.", location: "Beverly Hills", rating: 5,
-    text: "Replaced our old 50-gallon with a Navien tankless. The team handled all the rebate paperwork and we got $1,400 back from SoCalGas. Endless hot water and our gas bill is down $90/month. Worth every penny.",
-    service: "Tankless Conversion", date: "1 month ago",
+    name: "Ellis H.", location: "Studio City", rating: 5,
+    text: "Our water heater broke, and the LA Water Heaters team was out two days later installing a new one for us! We are so grateful for their knowledge and expertise as they helped us choose the right solution.",
+    service: "Water Heater Installation", date: "via Yelp",
   },
   {
-    name: "Jennifer L.", location: "Santa Monica", rating: 5,
-    text: "Our tankless threw an error code Sunday night. They came out within an hour, descaled the heat exchanger, and had us back to hot water by 9pm. No emergency surcharge either. These guys are the real deal.",
-    service: "Emergency Tankless Repair", date: "3 weeks ago",
+    name: "Diana T.", location: "Burbank", rating: 5,
+    text: "Our water heater went out and when I inquired on Yelp they were very responsive. They reached out, gave me a quote and had the new unit installed the next day. They even hauled away the old unit and the housing it was in.",
+    service: "Water Heater Replacement", date: "via Yelp",
   },
   {
-    name: "David M.", location: "Pasadena", rating: 5,
-    text: "Old Bradford White finally died in our 1924 Craftsman. They navigated the tight closet space like pros, did the gas line upsize, and pulled all the historic district permits. Same-day install. Couldn't be happier.",
-    service: "Water Heater Installation", date: "2 months ago",
+    name: "O. Laos", location: "Glendale", rating: 5,
+    text: "LA Water Heaters did a fantastic job installing a new Rheem water heater. Proficient, efficient, and comprehensive from start to finish. I'd use them again without hesitation.",
+    service: "Water Heater Installation", date: "via Yelp",
   },
   {
-    name: "Lisa T.", location: "Burbank", rating: 5,
-    text: "Family of 5 always running out of hot water. They sized us up to a 75-gallon Rheem and now everyone can shower in the morning without anyone going cold. Same-day install, no mess left behind.",
-    service: "Water Heater Replacement", date: "5 weeks ago",
+    name: "Letitia L.", location: "Pasadena", rating: 5,
+    text: "LA Water Heaters may be my new favourite plumber! Their crew came on time and installed the water heater quickly and cleanly. Fair price and great communication throughout.",
+    service: "Water Heater Replacement", date: "via Yelp",
   },
   {
-    name: "Robert C.", location: "Glendale", rating: 5,
-    text: "Hillside home in Glendale needed a recirculation pump — endless waiting for hot water at the master bath. They installed a Navien NPE-A2 with built-in recirc. Instant hot water now. The tech explained everything clearly. 10/10.",
-    service: "Tankless Installation", date: "6 weeks ago",
-  },
-  {
-    name: "Amanda P.", location: "West Hollywood", rating: 5,
-    text: "My gas water heater pilot kept going out. Two other plumbers told me I needed a new unit. LA Water Heaters diagnosed it as a $40 thermocouple, replaced it in 20 minutes. Honest people are hard to find. Customer for life.",
-    service: "Water Heater Repair", date: "3 months ago",
-  },
-  {
-    name: "James W.", location: "Studio City", rating: 5,
-    text: "Annual maintenance on our 4-year-old tankless. Tech showed me photos of the scale buildup before/after descaling. Now it heats noticeably faster. Worth the $189 — definitely doing this every year.",
-    service: "Tankless Maintenance", date: "2 weeks ago",
+    name: "Tomaso K.", location: "Santa Monica", rating: 5,
+    text: "LA Water Heaters were super helpful and the response was really fast. They showed up on time, the price was very reasonable, and the work was done right. Highly recommend.",
+    service: "Water Heater Repair", date: "via Yelp",
   },
 ];

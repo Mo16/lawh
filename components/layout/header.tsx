@@ -88,7 +88,7 @@ export function Header() {
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5"><MapPin className="h-3 w-3 text-primary-300" /> Serving All of Los Angeles</span>
             <span className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-green-400" /> 24/7 Emergency Service</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck className="h-3 w-3 text-primary-300" /> Lic. #{SITE.license}</span>
+            <span className="flex items-center gap-1.5"><ShieldCheck className="h-3 w-3 text-primary-300" /> Licensed</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
@@ -236,7 +236,7 @@ export function Header() {
               ★ {SITE.rating}/5 · {SITE.reviewCount}+ reviews
             </span>
             <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
-              🛡️ Lic. #{SITE.license}
+              🛡️ Licensed
             </span>
           </div>
 

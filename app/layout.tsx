@@ -138,7 +138,7 @@ export default function RootLayout({
       closes: "23:59",
     },
     priceRange: "$$",
-    sameAs: [SITE.social.google, SITE.social.yelp, SITE.social.facebook],
+    sameAs: [SITE.social.yelp],
   };
 
   return (

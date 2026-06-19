@@ -142,7 +142,7 @@ Built mobile-first with:
 - **Canonical URLs** on every page
 - **Programmatic sitemap** covering all 33 routes
 - **Conversion CTAs** in 8+ places per page: phone, quote, email
-- **Trust signals:** rating, reviews, license, response time
+- **Trust signals:** rating, reviews, licensed & insured, response time
 - **Urgency strips** on emergency pages
 - **Promo strip** at top with rebate offer + financing link
 - **Sticky mobile CTA** ensures phone always 1 tap away
@@ -152,7 +152,6 @@ Built mobile-first with:
 Edit `data/site.ts` to update:
 - Phone, email, address
 - Rating, review count
-- License number
 - Founding year
 
 Edit `data/services.ts`, `data/locations.ts`, `data/brands.ts` to add/edit content.

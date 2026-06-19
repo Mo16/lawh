@@ -8,12 +8,12 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: `About ${SITE.name} — LA's Trusted Water Heater Experts`,
-  description: `Learn about ${SITE.name}. ${SITE.years}+ years serving Los Angeles, ${SITE.reviewCount}+ five-star reviews, and 100% satisfaction guarantee. Lic. #${SITE.license}.`,
+  description: `Learn about ${SITE.name}. ${SITE.years}+ years serving Los Angeles, ${SITE.reviewCount}+ five-star reviews, and 100% satisfaction guarantee. Licensed and insured.`,
   alternates: { canonical: `${SITE.url}/about` },
 };
 
 const VALUES = [
-  { icon: ShieldCheck, title: "Licensed & Insured", desc: `Fully licensed (Lic. #${SITE.license}), bonded, and insured for your protection.` },
+  { icon: ShieldCheck, title: "Licensed & Insured", desc: `Fully licensed, bonded, and insured for your protection.` },
   { icon: Clock, title: "Always On Time", desc: "We respect your schedule. 30-minute average response, same-day service on most jobs." },
   { icon: Users, title: "Real People, Real Service", desc: "When you call, a real person answers. No phone trees, no automated runaround." },
   { icon: Award, title: "100% Satisfaction Guarantee", desc: "If you're not 100% satisfied with our work, we make it right — guaranteed." },
@@ -36,7 +36,7 @@ export default function AboutPage() {
         subheadline={`Since ${SITE.founded}, we've installed and serviced thousands of water heaters across Los Angeles. Family-owned, locally operated, and obsessed with doing right by our customers.`}
         image="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&h=1000&fit=crop&q=80"
         imageAlt="LA Water Heaters team"
-        bullets={["Family-owned since 2008", `${SITE.reviewCount}+ five-star reviews`, `Lic. #${SITE.license}`, "100% satisfaction guarantee"]}
+        bullets={["Family-owned since 2008", `${SITE.reviewCount}+ five-star reviews`, `Licensed`, "100% satisfaction guarantee"]}
       />
 
       <TrustBar />
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 <h3 className="font-display text-3xl font-black text-ink sm:text-4xl">Zohrab Grigoriyan</h3>
                 <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
                   <ShieldCheck className="h-4 w-4 text-primary-600" />
-                  <span>Lic. #{SITE.license}</span>
+                  <span>Licensed</span>
                   <span className="text-ink/30">·</span>
                   <span>20+ years in the trade</span>
                 </div>
@@ -123,41 +123,32 @@ export default function AboutPage() {
             </div>
           </Card>
 
-          {/* Supporting team */}
+          {/* Crew — the team Zohrab leads */}
           <div className="grid gap-6 sm:grid-cols-3">
             {[
               {
-                name: "Aram Petrosyan",
-                role: "Lead Installation Tech",
-                bio: "12+ years on tankless and high-efficiency systems. Navien & Rinnai certified.",
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&q=80",
+                icon: Wrench,
+                role: "Installation Crew",
+                bio: `Licensed install techs trained on Zohrab's playbook — tank, tankless, and high-efficiency systems from Rheem and A.O. Smith to Navien and Rinnai.`,
               },
               {
-                name: "David Hernandez",
-                role: "Service & Repair Lead",
-                bio: "Diagnoses what others miss. Specializes in error codes, pilot issues, and emergency calls.",
-                img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=600&fit=crop&q=80",
+                icon: Zap,
+                role: "Service & Repair",
+                bio: "Fast, honest diagnostics on error codes, pilot issues, leaks, and emergency calls. We find what others miss and fix it right the first time.",
               },
               {
-                name: "Elena Martirosyan",
-                role: "Customer Care Manager",
-                bio: "The voice you'll hear when you call. Schedules every job and keeps the trucks moving.",
-                img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=600&fit=crop&q=80",
+                icon: Users,
+                role: "Customer Care",
+                bio: "A real person answers when you call — no phone trees. We schedule every job, keep you updated, and keep the trucks moving across LA.",
               },
-            ].map((person) => (
-              <Card key={person.name} className="overflow-hidden transition-all hover:-translate-y-1 hover:shadow-card-hover">
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={person.img}
-                    alt={`${person.name}, ${person.role} at ${SITE.name}`}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="font-display text-lg font-bold text-ink">{person.name}</h3>
-                  <div className="mt-1 text-sm font-semibold text-primary-700">{person.role}</div>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{person.bio}</p>
+            ].map((crew) => (
+              <Card key={crew.role} className="transition-all hover:-translate-y-1 hover:shadow-card-hover">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-500 text-white shadow-md">
+                    <crew.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-ink">{crew.role}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{crew.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -218,7 +209,7 @@ export default function AboutPage() {
                   <ShieldCheck className="h-7 w-7" />
                 </div>
                 <div className="font-display text-base font-bold">Licensed</div>
-                <div className="mt-1 text-sm text-muted-foreground">Lic. #{SITE.license}</div>
+                <div className="mt-1 text-sm text-muted-foreground">Bonded &amp; insured</div>
               </CardContent>
             </Card>
             <Card className="text-center">

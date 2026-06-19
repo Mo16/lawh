@@ -234,7 +234,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
                   "Same-day service",
                   category === "tankless" ? "$1,900 in rebates" : "Free estimates",
                   "30-minute response",
-                  `Lic. #${SITE.license}`,
+                  `Licensed`,
                 ].map((b, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-ink/80">
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-primary-500" />
@@ -267,7 +267,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
                   <span>({SITE.reviewCount}+ reviews)</span>
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-primary-600" /> Lic. #{SITE.license}
+                  <ShieldCheck className="h-3.5 w-3.5 text-primary-600" /> Licensed
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-3.5 w-3.5 text-green-600" /> 24/7 Available
@@ -494,7 +494,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
       <WhyUs
         items={[
           `${SITE.years}+ years serving Los Angeles`,
-          `Lic. #${SITE.license}, fully insured`,
+          `Licensed & insured`,
           "30-minute average emergency response",
           `${SITE.rating}/5 from ${SITE.reviewCount}+ reviews`,
           "Same-day service guarantee",
