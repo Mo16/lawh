@@ -1,34 +1,20 @@
-export const SITE = {
-  name: "LA Water Heaters",
-  shortName: "LA Water Heaters",
-  tagline: "Los Angeles' Trusted Water Heater Specialists",
-  description:
-    "Same-day water heater installation, repair, and replacement across Los Angeles. Tank, tankless, all major brands. Licensed, insured, 24/7 emergency service.",
-  url: "https://lawaterheaters.com",
-  phone: "(818) 555-0173",
-  phoneTel: "tel:+18185550173",
-  phoneDisplay: "818-555-0173",
-  email: "lawaterheaters@gmail.com",
-  address: {
-    street: "12450 Ventura Blvd",
-    city: "Studio City",
-    state: "CA",
-    zip: "91604",
-    full: "12450 Ventura Blvd, Studio City, CA 91604",
-  },
-  founded: 2008,
-  years: new Date().getFullYear() - 2008,
-  rating: 4.9,
-  reviewCount: 819,
-  hours: "24/7 — Available Now",
-  social: {
-    yelp: "https://www.yelp.com/biz/la-water-heaters-los-angeles",
-  },
-  trustBadges: [
-    "Licensed & Insured",
-    "24/7 Emergency Service",
-    "Same-Day Install",
-    "100% Satisfaction Guarantee",
-  ],
-  bbb: "A+ BBB Accredited",
-} as const;
+export interface SiteData {
+  name: string;
+  shortName: string;
+  tagline: string;
+  description: string;
+  url: string;
+  phone: string;
+  phoneTel: string;
+  phoneDisplay: string;
+  email: string;
+  address: { street: string; city: string; state: string; zip: string; full: string };
+  founded: number;
+  years: number;
+  rating: number;
+  reviewCount: number;
+  hours: string;
+  social: { yelp: string };
+  trustBadges: string[];
+  bbb: string;
+}
