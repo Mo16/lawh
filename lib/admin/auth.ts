@@ -30,7 +30,7 @@ const DEFAULT_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 export async function createSessionToken(secret: string, ttlMs: number = DEFAULT_TTL): Promise<string> {
   const payload = bytesToB64Url(enc.encode(JSON.stringify({ exp: Date.now() + ttlMs })));
-  const sig = new Uint8Array(await crypto.subtle.sign("HMAC", await hmacKey(secret), enc.encode(payload)));
+  const sig = new Uint8Array(await crypto.subtle.sign("HMAC", await hmacKey(secret), enc.encode(payload) as BufferSource));
   return `${payload}.${bytesToB64Url(sig)}`;
 }
 
@@ -42,7 +42,7 @@ export async function verifySessionToken(secret: string, token: string | undefin
   const sig = token.slice(dot + 1);
   let valid = false;
   try {
-    valid = await crypto.subtle.verify("HMAC", await hmacKey(secret), b64UrlToBytes(sig), enc.encode(payload));
+    valid = await crypto.subtle.verify("HMAC", await hmacKey(secret), b64UrlToBytes(sig) as BufferSource, enc.encode(payload) as BufferSource);
   } catch {
     return false;
   }
