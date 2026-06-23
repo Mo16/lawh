@@ -321,6 +321,46 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/blog": {
+    key: "pages/blog",
+    title: "Blog Page",
+    fields: [
+      { name: "hero", label: "Hero", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "headline", label: "Headline", type: "text" },
+        { name: "highlight", label: "Highlight (coloured word)", type: "text" },
+        { name: "subheadline", label: "Subheadline", type: "textarea" },
+        { name: "image", label: "Hero image", type: "image" },
+        { name: "imageAlt", label: "Image alt text", type: "text" },
+        { name: "bullets", label: "Bullet points", type: "list" },
+      ]},
+      { name: "featuredSection", label: "Featured Section", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "readArticleLabel", label: "Read article label", type: "text" },
+        { name: "readMoreLabel", label: "Read more label", type: "text" },
+      ]},
+      { name: "posts", label: "Blog Posts", type: "repeatable", of: [
+        { name: "slug", label: "Slug (URL)", type: "text" },
+        { name: "title", label: "Title", type: "text" },
+        { name: "excerpt", label: "Excerpt", type: "textarea" },
+        { name: "category", label: "Category", type: "text" },
+        { name: "readTime", label: "Read time", type: "text" },
+        { name: "date", label: "Date", type: "text" },
+        { name: "image", label: "Image", type: "image" },
+      ]},
+      { name: "newsletterSection", label: "Newsletter Section", type: "group", of: [
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+        { name: "emailPlaceholder", label: "Email placeholder", type: "text" },
+        { name: "submitLabel", label: "Submit button label", type: "text" },
+      ]},
+      { name: "finalCTA", label: "Final CTA", type: "group", of: [
+        { name: "headline", label: "Headline", type: "text" },
+        { name: "subheadline", label: "Subheadline", type: "textarea" },
+      ]},
+    ],
+  },
   "pages/service-areas": {
     key: "pages/service-areas",
     title: "Service Areas Page",

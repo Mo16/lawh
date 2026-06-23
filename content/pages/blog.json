@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "badge": "Blog",
+    "headline": "Water Heater",
+    "highlight": "Tips & Guides",
+    "subheadline": "Expert advice from LA's #1 water heater specialists. Maintenance tips, brand comparisons, troubleshooting guides — everything you need to know.",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=1000&fit=crop&q=80",
+    "imageAlt": "Water heater knowledge resources",
+    "bullets": [
+      "6+ articles",
+      "Updated weekly",
+      "Expert insights",
+      "Practical guides"
+    ]
+  },
+  "featuredSection": {
+    "badge": "Featured",
+    "heading": "Latest from the Blog",
+    "readArticleLabel": "Read article",
+    "readMoreLabel": "Read more"
+  },
+  "newsletterSection": {
+    "heading": "Get water heater tips in your inbox",
+    "paragraph": "One email a month. Maintenance tips, rebate alerts, and money-saving guides.",
+    "emailPlaceholder": "your@email.com",
+    "submitLabel": "Subscribe"
+  },
+  "finalCTA": {
+    "headline": "Need more than tips? Call us.",
+    "subheadline": "Real plumbers, real diagnosis, real fixes. Same-day service across LA."
+  },
+  "posts": [
+    {
+      "slug": "tank-vs-tankless",
+      "title": "Tank vs Tankless: Which Water Heater Is Right for Your LA Home?",
+      "excerpt": "We break down the real costs, savings, and tradeoffs to help you decide whether a tank or tankless water heater is right for your home and budget.",
+      "category": "Buying Guide",
+      "readTime": "8 min read",
+      "date": "March 12, 2026",
+      "image": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1200&h=675&fit=crop&q=80"
+    },
+    {
+      "slug": "water-heater-maintenance-checklist",
+      "title": "The Annual Water Heater Maintenance Checklist Every Homeowner Should Know",
+      "excerpt": "5 simple things you can do (or have us do) every year to extend your water heater's life by 5+ years and save on energy bills.",
+      "category": "Maintenance",
+      "readTime": "5 min read",
+      "date": "March 8, 2026",
+      "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&h=675&fit=crop&q=80"
+    },
+    {
+      "slug": "tankless-rebates-la",
+      "title": "How to Claim Up to $1,900 in Tankless Water Heater Rebates in LA",
+      "excerpt": "A complete walkthrough of every utility and manufacturer rebate available for tankless installations in Los Angeles — and how we handle the paperwork.",
+      "category": "Rebates & Savings",
+      "readTime": "7 min read",
+      "date": "March 1, 2026",
+      "image": "https://images.unsplash.com/photo-1554224155-cfa08c2a758f?w=1200&h=675&fit=crop&q=80"
+    },
+    {
+      "slug": "common-water-heater-error-codes",
+      "title": "Tankless Water Heater Error Codes: What They Mean and What to Do",
+      "excerpt": "Decode every common error code from Navien, Rinnai, Noritz, and Takagi tankless units — and learn which you can fix yourself.",
+      "category": "Troubleshooting",
+      "readTime": "10 min read",
+      "date": "February 22, 2026",
+      "image": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&h=675&fit=crop&q=80"
+    },
+    {
+      "slug": "best-water-heater-brands-2026",
+      "title": "The Best Water Heater Brands in 2026 (Ranked by an LA Plumber)",
+      "excerpt": "After installing thousands of units, here's our honest ranking of the best water heater brands for LA homes — tank and tankless.",
+      "category": "Brand Comparison",
+      "readTime": "12 min read",
+      "date": "February 15, 2026",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=675&fit=crop&q=80"
+    },
+    {
+      "slug": "signs-water-heater-failing",
+      "title": "7 Signs Your Water Heater Is About to Fail (Don't Ignore These)",
+      "excerpt": "Catch failure early and avoid the emergency. Here are the seven warning signs every LA homeowner should know.",
+      "category": "Maintenance",
+      "readTime": "6 min read",
+      "date": "February 8, 2026",
+      "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=675&fit=crop&q=80"
+    }
+  ]
+}
