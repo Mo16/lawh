@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Phone, Menu, X, ChevronDown, Clock, MapPin, ShieldCheck, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SITE } from "@/data/site";
+import type { SiteData } from "@/data/site";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 
@@ -51,7 +51,7 @@ const NAV: NavItem[] = [
   { label: "FAQ", href: "/faq" },
 ];
 
-export function Header() {
+export function Header({ site }: { site: SiteData }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hover, setHover] = useState<string | null>(null);
@@ -95,11 +95,11 @@ export function Header() {
               <span className="flex">
                 {[1, 2, 3, 4, 5].map(i => <Star key={i} className="h-3 w-3 fill-cta-400 text-cta-400" />)}
               </span>
-              <span className="ml-1 font-semibold text-white">{SITE.rating}</span>
-              <span className="text-white/60">/5 ({SITE.reviewCount}+ reviews)</span>
+              <span className="ml-1 font-semibold text-white">{site.rating}</span>
+              <span className="text-white/60">/5 ({site.reviewCount}+ reviews)</span>
             </span>
-            <a href={SITE.phoneTel} className="flex items-center gap-1.5 font-semibold text-white">
-              <Phone className="h-3.5 w-3.5 text-cta-400" /> {SITE.phone}
+            <a href={site.phoneTel} className="flex items-center gap-1.5 font-semibold text-white">
+              <Phone className="h-3.5 w-3.5 text-cta-400" /> {site.phone}
             </a>
           </div>
         </div>
@@ -162,9 +162,9 @@ export function Header() {
           <div className="flex items-center gap-2">
             {/* Desktop call button — orange (call CTA) */}
             <Button asChild size="sm" variant="call" className="hidden md:inline-flex">
-              <a href={SITE.phoneTel}>
+              <a href={site.phoneTel}>
                 <Phone className="h-4 w-4" />
-                <span className="hidden lg:inline">{SITE.phoneDisplay}</span>
+                <span className="hidden lg:inline">{site.phoneDisplay}</span>
                 <span className="lg:hidden">Call Now</span>
               </a>
             </Button>
@@ -220,7 +220,7 @@ export function Header() {
           {/* Mobile CTAs */}
           <div className="space-y-2.5">
             <Button asChild size="lg" variant="call" className="w-full">
-              <a href={SITE.phoneTel}><Phone className="h-5 w-5" /> Call {SITE.phoneDisplay}</a>
+              <a href={site.phoneTel}><Phone className="h-5 w-5" /> Call {site.phoneDisplay}</a>
             </Button>
             <Button asChild size="lg" variant="default" className="w-full">
               <Link href="/contact" onClick={() => setOpen(false)}>Get a Free Quote</Link>
@@ -233,7 +233,7 @@ export function Header() {
               ⚡ 30-Min Response
             </span>
             <span className="rounded-full bg-cta-50 px-3 py-1 text-xs font-semibold text-cta-700">
-              ★ {SITE.rating}/5 · {SITE.reviewCount}+ reviews
+              ★ {site.rating}/5 · {site.reviewCount}+ reviews
             </span>
             <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
               🛡️ Licensed
@@ -303,7 +303,7 @@ export function Header() {
 }
 
 /** Sticky bottom phone CTA for mobile — appears only after user scrolls past hero CTAs */
-export function StickyMobileCTA() {
+export function StickyMobileCTA({ site }: { site: SiteData }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -327,7 +327,7 @@ export function StickyMobileCTA() {
     >
       <div className="flex items-center gap-2.5 px-4 py-3">
         <Button asChild size="lg" variant="call" className="flex-1">
-          <a href={SITE.phoneTel}>
+          <a href={site.phoneTel}>
             <Phone className="h-4 w-4" />
             Call Now
           </a>

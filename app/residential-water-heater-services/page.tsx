@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { ServicePageTemplate } from "@/components/templates/service-page";
-import { SERVICE_BY_SLUG } from "@/data/services";
-
-const service = SERVICE_BY_SLUG["residential-water-heater-services"];
+import { getService } from "@/lib/content";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Residential Water Heater Services in Los Angeles",
@@ -16,6 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ResidentialWaterHeaterServicesPage() {
+export default async function ResidentialWaterHeaterServicesPage() {
+  const service = await getService("residential-water-heater-services");
+  if (!service) notFound();
   return <ServicePageTemplate service={service} />;
 }

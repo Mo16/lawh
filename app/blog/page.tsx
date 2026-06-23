@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Calendar, BookOpen, Phone } from "lucide-react";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, FinalCTA } from "@/components/sections/blocks";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const metadata: Metadata = {
-  title: "Water Heater Tips, Guides & Expert Advice",
-  description: "Expert water heater advice from LA's #1 specialists. Maintenance tips, brand comparisons, troubleshooting guides, and more.",
-  alternates: { canonical: `${SITE.url}/blog` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: "Water Heater Tips, Guides & Expert Advice",
+    description: "Expert water heater advice from LA's #1 specialists. Maintenance tips, brand comparisons, troubleshooting guides, and more.",
+    alternates: { canonical: `${SITE.url}/blog` },
+  };
+}
 
 const POSTS = [
   {
@@ -71,7 +74,7 @@ const POSTS = [
   },
 ];
 
-export default function BlogPage() {
+export default async function BlogPage() {
   return (
     <>
       <Hero

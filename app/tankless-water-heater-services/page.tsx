@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { HubPageTemplate } from "@/components/templates/hub-page";
-import { SERVICE_BY_SLUG } from "@/data/services";
-import { SITE } from "@/data/site";
-
-const service = SERVICE_BY_SLUG["tankless-water-heater-services"];
+import { getService } from "@/lib/content";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Tankless Water Heater Services Los Angeles — Install, Repair & Convert | LA Water Heaters",
   description:
     "Tankless water heater services across Los Angeles. Installation, repair, and tank-to-tankless conversion. Up to $1,900 in rebates handled. All major brands. 4.9★ from 819+ reviews. Call (818) 555-0173.",
-  alternates: { canonical: `${SITE.url}/tankless-water-heater-services` },
+  alternates: { canonical: "https://lawaterheaters.com/tankless-water-heater-services" },
   keywords: [
     "tankless water heater los angeles",
     "tankless water heater installation los angeles",
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
     title: "Tankless Water Heater Services Los Angeles — Install, Repair & Convert",
     description:
       "Tankless install, repair & conversion across LA. Up to $1,900 in rebates handled. 4.9★ from 819+ reviews. Call (818) 555-0173.",
-    url: `${SITE.url}/tankless-water-heater-services`,
+    url: "https://lawaterheaters.com/tankless-water-heater-services",
     type: "website",
   },
   twitter: {
@@ -36,6 +34,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TanklessWaterHeaterServicesHubPage() {
+export default async function TanklessWaterHeaterServicesHubPage() {
+  const service = await getService("tankless-water-heater-services");
+  if (!service) notFound();
   return <HubPageTemplate category="tankless" service={service} />;
 }

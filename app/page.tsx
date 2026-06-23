@@ -3,10 +3,8 @@ import {
   Phone, ArrowRight, Flame, Zap, Settings, RefreshCw, ShieldCheck,
   AlertTriangle,
 } from "lucide-react";
-import { SITE } from "@/data/site";
-import { SERVICES } from "@/data/services";
-import { BRANDS } from "@/data/brands";
-import { FAQS } from "@/data/faqs";
+import { getSite, getServices, getBrands, getFaqs } from "@/lib/content";
+import { getIcon } from "@/lib/icons";
 import { Hero } from "@/components/sections/hero";
 import {
   TrustBar, Process, WhyUs, ReviewsSection, FAQSection, FinalCTA,
@@ -16,7 +14,14 @@ import { Button } from "@/components/ui/button";
 import { Badge, SectionLabel } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [SITE, SERVICES, BRANDS, FAQS] = await Promise.all([
+    getSite(),
+    getServices(),
+    getBrands(),
+    getFaqs(),
+  ]);
+
   // Top 6 services to feature
   const featuredServices = [
     SERVICES.find(s => s.slug === "water-heater-installation")!,
@@ -65,37 +70,40 @@ export default function HomePage() {
 
           {/* Featured services grid */}
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredServices.map((s) => (
-              <Link key={s.slug} href={`/${s.slug}`} className="group block">
-                <Card className="h-full overflow-hidden ring-1 ring-ink/5 transition-all hover:-translate-y-1 hover:shadow-card-hover">
-                  <div className="relative h-48 overflow-hidden bg-primary-800">
-                    <img
-                      src={s.hero.image}
-                      alt={s.h1}
-                      className="h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-ink/40" />
-                    <div className="absolute left-4 top-4">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-primary-700 shadow-md">
-                        <s.icon className="h-5 w-5" />
+            {featuredServices.map((s) => {
+              const Icon = getIcon(s.icon);
+              return (
+                <Link key={s.slug} href={`/${s.slug}`} className="group block">
+                  <Card className="h-full overflow-hidden ring-1 ring-ink/5 transition-all hover:-translate-y-1 hover:shadow-card-hover">
+                    <div className="relative h-48 overflow-hidden bg-primary-800">
+                      <img
+                        src={s.hero.image}
+                        alt={s.h1}
+                        className="h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-ink/40" />
+                      <div className="absolute left-4 top-4">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-primary-700 shadow-md">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                      </div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <Badge variant="dark" className="bg-white/15">{s.badge}</Badge>
                       </div>
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <Badge variant="dark" className="bg-white/15">{s.badge}</Badge>
-                    </div>
-                  </div>
-                  <CardContent className="p-7">
-                    <h3 className="text-xl font-bold group-hover:text-primary-700">{s.h1}</h3>
-                    <p className="mt-2 line-clamp-2 text-sm text-ink/65">{s.shortDesc}</p>
-                    <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-primary-600">
-                      Learn more
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                    <CardContent className="p-7">
+                      <h3 className="text-xl font-bold group-hover:text-primary-700">{s.h1}</h3>
+                      <p className="mt-2 line-clamp-2 text-sm text-ink/65">{s.shortDesc}</p>
+                      <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-primary-600">
+                        Learn more
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
 
           {/* View all services CTA */}

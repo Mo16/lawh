@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { LocationPageTemplate } from "@/components/templates/location-page";
-import { LOCATION_BY_SLUG } from "@/data/locations";
-
-const location = LOCATION_BY_SLUG["water-heater-services-pasadena"];
+import { getLocation } from "@/lib/content";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Pasadena, CA",
@@ -16,6 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PasadenaLocationPage() {
+export default async function PasadenaLocationPage() {
+  const location = await getLocation("water-heater-services-pasadena");
+  if (!location) notFound();
   return <LocationPageTemplate location={location} />;
 }

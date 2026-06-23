@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Phone, Home } from "lucide-react";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 
-export default function NotFound() {
+export default async function NotFound() {
+  const SITE = await getSite();
   return (
     <section className="flex min-h-[70vh] items-center justify-center bg-muted/30 py-16">
       <div className="container-narrow text-center">

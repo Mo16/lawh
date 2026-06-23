@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: `Terms of service for ${SITE.name}.`,
-  alternates: { canonical: `${SITE.url}/terms` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: "Terms of Service",
+    description: `Terms of service for ${SITE.name}.`,
+    alternates: { canonical: `${SITE.url}/terms` },
+  };
+}
 
-export default function TermsPage() {
+export default async function TermsPage() {
+  const SITE = await getSite();
+
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="container-narrow">

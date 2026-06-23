@@ -3,19 +3,21 @@ import Link from "next/link";
 import {
   Phone, ArrowRight, CheckCircle2, FileText, DollarSign, Zap, Award, Shield,
 } from "lucide-react";
-import { SITE } from "@/data/site";
-import { FAQS } from "@/data/faqs";
+import { getSite, getFaqs } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, FAQSection, FinalCTA, ReviewsSection } from "@/components/sections/blocks";
 import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const metadata: Metadata = {
-  title: "Tankless Water Heater Rebates Los Angeles — Save up to $1,900",
-  description: `Save up to $1,900 on a new tankless water heater with utility, federal, and manufacturer rebates. We handle all the paperwork. Free in-home estimate. Call ${SITE.phone}.`,
-  alternates: { canonical: `${SITE.url}/tankless-rebates` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: "Tankless Water Heater Rebates Los Angeles — Save up to $1,900",
+    description: `Save up to $1,900 on a new tankless water heater with utility, federal, and manufacturer rebates. We handle all the paperwork. Free in-home estimate. Call ${SITE.phone}.`,
+    alternates: { canonical: `${SITE.url}/tankless-rebates` },
+  };
+}
 
 const REBATES = [
   {
@@ -47,7 +49,8 @@ const REBATE_FAQS = [
   { q: "What if I'm replacing an existing tankless?", a: "Rebates typically apply to new installs and tank-to-tankless conversions, not direct tankless-to-tankless replacements. We'll confirm eligibility before you commit." },
 ];
 
-export default function TanklessRebatesPage() {
+export default async function TanklessRebatesPage() {
+  const SITE = await getSite();
   return (
     <>
       <Hero

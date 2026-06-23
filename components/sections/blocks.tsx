@@ -4,9 +4,9 @@ import {
   Award, ThumbsUp, Truck, DollarSign, MapPin, AlertTriangle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SITE } from "@/data/site";
-import { LOCATIONS, ADDITIONAL_AREAS } from "@/data/locations";
-import { REVIEWS, FAQS, type FAQ } from "@/data/faqs";
+import { getSite, getLocations, getAdditionalAreas, getReviews } from "@/lib/content";
+import { getIcon } from "@/lib/icons";
+import type { FAQ } from "@/data/faqs";
 import { Button } from "@/components/ui/button";
 import { Badge, SectionLabel } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,7 +17,8 @@ import {
 /* ========================================================================
    TRUST BAR — Big-number stats row (CoolFix "10 / 1,500+ / 4.9" style)
    ======================================================================== */
-export function TrustBar() {
+export async function TrustBar() {
+  const SITE = await getSite();
   const items = [
     { icon: Star, value: `${SITE.rating}/5`, label: `${SITE.reviewCount}+ reviews` },
     { icon: ShieldCheck, value: "Licensed", label: `& insured` },
@@ -46,7 +47,8 @@ export function TrustBar() {
 /* ========================================================================
    BIG STATS BAND — Display CoolFix-style headline numbers
    ======================================================================== */
-export function StatsBand() {
+export async function StatsBand() {
+  const SITE = await getSite();
   const stats = [
     { num: `${SITE.years}+`, label: "Years serving Los Angeles" },
     { num: `${SITE.reviewCount}+`, label: "Five-star homeowner reviews" },
@@ -75,7 +77,8 @@ export function StatsBand() {
 /* ========================================================================
    EMERGENCY SECTION — full dedicated 24/7 emergency block on solid red
    ======================================================================== */
-export function EmergencySection() {
+export async function EmergencySection() {
+  const SITE = await getSite();
   return (
     <section className="bg-emergency-600 py-20 text-white sm:py-24">
       <div className="container-tight">
@@ -155,7 +158,8 @@ export function EmergencySection() {
 /* ========================================================================
    EMERGENCY STRIP — kept for urgency (red banner)
    ======================================================================== */
-export function EmergencyStrip() {
+export async function EmergencyStrip() {
+  const SITE = await getSite();
   return (
     <div className="bg-emergency-600 text-white">
       <div className="container-tight flex flex-col items-center justify-center gap-2 py-3 text-center text-sm font-semibold sm:flex-row sm:gap-4">
@@ -188,11 +192,12 @@ const DEFAULT_STEPS = [
   { step: "3", title: "Upfront Written Quote", desc: "Clear price and scope before any work begins." },
   { step: "4", title: "Same-Day Service", desc: "Most jobs completed in a single visit, fully warrantied." },
 ];
-export function Process({
+export async function Process({
   steps = DEFAULT_STEPS,
   title = "From Call to Hot Water in 4 Steps",
   subtitle = "Getting your water heater fixed is easier than you think — just four simple steps and comfort returns.",
 }: ProcessProps) {
+  const SITE = await getSite();
   return (
     <section className="bg-sky-50 py-20 sm:py-24">
       <div className="container-tight">
@@ -359,7 +364,8 @@ export function WhatsIncluded({ items, title = "What's Included In Every Service
 /* ========================================================================
    WHY US — dark contrast section (CoolFix testimonials black band)
    ======================================================================== */
-export function WhyUs({ items, title = "Why LA Homeowners Choose Us" }: { items: string[]; title?: string }) {
+export async function WhyUs({ items, title = "Why LA Homeowners Choose Us" }: { items: string[]; title?: string }) {
+  const SITE = await getSite();
   return (
     <section className="bg-ink-900 py-20 text-white sm:py-24">
       <div className="container-tight">
@@ -399,8 +405,9 @@ export function WhyUs({ items, title = "Why LA Homeowners Choose Us" }: { items:
 /* ========================================================================
    REVIEWS — "Look What Our Clients Say" testimonials grid
    ======================================================================== */
-export function ReviewsSection({ limit = 6 }: { limit?: number }) {
-  const items = REVIEWS.slice(0, limit);
+export async function ReviewsSection({ limit = 6 }: { limit?: number }) {
+  const [SITE, reviews] = await Promise.all([getSite(), getReviews()]);
+  const items = reviews.slice(0, limit);
   return (
     <section className="bg-ink-900 py-20 text-white sm:py-24">
       <div className="container-tight">
@@ -461,7 +468,8 @@ export function ReviewsSection({ limit = 6 }: { limit?: number }) {
 /* ========================================================================
    FAQ SECTION
    ======================================================================== */
-export function FAQSection({ faqs, title = "Frequently Asked Questions" }: { faqs: FAQ[]; title?: string }) {
+export async function FAQSection({ faqs, title = "Frequently Asked Questions" }: { faqs: FAQ[]; title?: string }) {
+  const SITE = await getSite();
   return (
     <section className="bg-white py-20 sm:py-24">
       <div className="container-narrow">
@@ -495,10 +503,11 @@ interface FinalCTAProps {
   headline?: string;
   subheadline?: string;
 }
-export function FinalCTA({
+export async function FinalCTA({
   headline = "Ready to fix your water heater?",
   subheadline = "Same-day service, upfront pricing, and a 100% satisfaction guarantee. Call now or book online — we'll be there fast.",
 }: FinalCTAProps) {
+  const SITE = await getSite();
   return (
     <section className="relative overflow-hidden bg-sky-200 py-24 text-ink sm:py-28">
       <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/55 blur-3xl" />
@@ -533,7 +542,8 @@ export function FinalCTA({
 /* ========================================================================
    AREAS WE SERVE — Compact location grid
    ======================================================================== */
-export function ServiceAreasGrid() {
+export async function ServiceAreasGrid() {
+  const [SITE, locations, additionalAreas] = await Promise.all([getSite(), getLocations(), getAdditionalAreas()]);
   return (
     <section className="bg-white py-20 sm:py-24">
       <div className="container-tight">
@@ -546,7 +556,7 @@ export function ServiceAreasGrid() {
         </div>
 
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {LOCATIONS.map(l => (
+          {locations.map(l => (
             <Link
               key={l.slug}
               href={`/${l.slug}`}
@@ -570,7 +580,7 @@ export function ServiceAreasGrid() {
             Also serving
           </div>
           <ul className="flex flex-wrap gap-2">
-            {ADDITIONAL_AREAS.map(area => (
+            {additionalAreas.map(area => (
               <li
                 key={area}
                 className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-ink/75 ring-1 ring-ink/5"

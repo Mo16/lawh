@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Phone } from "lucide-react";
-import { SITE } from "@/data/site";
-import { FAQS } from "@/data/faqs";
+import { getSite, getFaqs } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, FinalCTA } from "@/components/sections/blocks";
 import { Badge } from "@/components/ui/badge";
@@ -10,11 +9,14 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata: Metadata = {
-  title: "Water Heater FAQ — Common Questions Answered",
-  description: `Common questions about water heaters, tankless installs, repairs, financing, and emergency service. ${SITE.name} — Los Angeles.`,
-  alternates: { canonical: `${SITE.url}/faq` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: "Water Heater FAQ — Common Questions Answered",
+    description: `Common questions about water heaters, tankless installs, repairs, financing, and emergency service. ${SITE.name} — Los Angeles.`,
+    alternates: { canonical: `${SITE.url}/faq` },
+  };
+}
 
 const SECTIONS = [
   { title: "General Questions", key: "general" as const },
@@ -24,7 +26,9 @@ const SECTIONS = [
   { title: "Maintenance", key: "maintenance" as const },
 ];
 
-export default function FaqPage() {
+export default async function FaqPage() {
+  const [SITE, FAQS] = await Promise.all([getSite(), getFaqs()]);
+
   // FAQ schema for SEO
   const allFaqs = SECTIONS.flatMap(s => FAQS[s.key]);
   const faqSchema = {

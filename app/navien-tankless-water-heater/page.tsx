@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { BrandPageTemplate } from "@/components/templates/brand-page";
-import { BRAND_BY_SLUG } from "@/data/brands";
-
-const brand = BRAND_BY_SLUG["navien-tankless-water-heater"];
+import { getBrand } from "@/lib/content";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Navien Tankless Water Heater Services in LA",
@@ -16,6 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NavienTanklessPage() {
+export default async function NavienTanklessPage() {
+  const brand = await getBrand("navien-tankless-water-heater");
+  if (!brand) notFound();
   return <BrandPageTemplate brand={brand} />;
 }

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { BrandPageTemplate } from "@/components/templates/brand-page";
-import { BRAND_BY_SLUG } from "@/data/brands";
-
-const brand = BRAND_BY_SLUG["ao-smith-water-heater"];
+import { getBrand } from "@/lib/content";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "A.O. Smith Water Heater Installation & Repair in LA",
@@ -16,6 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AOSmithPage() {
+export default async function AOSmithPage() {
+  const brand = await getBrand("ao-smith-water-heater");
+  if (!brand) notFound();
   return <BrandPageTemplate brand={brand} />;
 }

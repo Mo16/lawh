@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, DollarSign, CheckCircle2, Calendar, Shield, Clock, ArrowRight } from "lucide-react";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, FAQSection, FinalCTA, ReviewsSection } from "@/components/sections/blocks";
 import { Button } from "@/components/ui/button";
 import { Badge, SectionLabel } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const metadata: Metadata = {
-  title: "Water Heater Financing Options in Los Angeles",
-  description: `Easy monthly payments from $89/mo. Apply in 60 seconds with a soft credit pull — no impact to your score. Affordable financing on water heater install and replacement. Call ${SITE.phone}.`,
-  alternates: { canonical: `${SITE.url}/financing` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: "Water Heater Financing Options in Los Angeles",
+    description: `Easy monthly payments from $89/mo. Apply in 60 seconds with a soft credit pull — no impact to your score. Affordable financing on water heater install and replacement. Call ${SITE.phone}.`,
+    alternates: { canonical: `${SITE.url}/financing` },
+  };
+}
 
 const FINANCING_FAQS = [
   { q: "What financing options do you offer?", a: "We offer flexible monthly payment plans on qualifying water heater installations and replacements, with terms up to 60 months at competitive rates. We work with multiple lending partners to find the best fit for your budget." },
@@ -30,7 +33,9 @@ const PLAN_HIGHLIGHTS = [
   { title: "Flexible terms", desc: "Terms tailored to your situation — short or long-term, we make it work." },
 ];
 
-export default function FinancingPage() {
+export default async function FinancingPage() {
+  const SITE = await getSite();
+
   return (
     <>
       <Hero

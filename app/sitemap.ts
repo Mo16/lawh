@@ -1,10 +1,9 @@
 import type { MetadataRoute } from "next";
-import { SERVICES } from "@/data/services";
-import { LOCATIONS } from "@/data/locations";
-import { BRANDS } from "@/data/brands";
-import { SITE } from "@/data/site";
+import { getSite, getServices, getLocations, getBrands } from "@/lib/content";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [SITE, SERVICES, LOCATIONS, BRANDS] = await Promise.all([getSite(), getServices(), getLocations(), getBrands()]);
+
   const now = new Date().toISOString();
   const w = "weekly" as const;
   const m = "monthly" as const;

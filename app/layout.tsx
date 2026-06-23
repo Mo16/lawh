@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans, Russo_One } from "next/font/google";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 import { Header, StickyMobileCTA } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
@@ -26,61 +26,64 @@ const wordmark = Russo_One({
   weight: ["400"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
-  title: {
-    default: `${SITE.name} — Same-Day Water Heater Service in Los Angeles`,
-    template: `%s | ${SITE.name}`,
-  },
-  description: SITE.description,
-  keywords: [
-    "water heater los angeles",
-    "tankless water heater los angeles",
-    "water heater installation",
-    "water heater repair",
-    "emergency water heater",
-    "water heater replacement",
-  ],
-  authors: [{ name: SITE.name }],
-  creator: SITE.name,
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: SITE.url,
-    siteName: SITE.name,
-    title: `${SITE.name} — Same-Day Water Heater Service in Los Angeles`,
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    metadataBase: new URL(SITE.url),
+    title: {
+      default: `${SITE.name} — Same-Day Water Heater Service in Los Angeles`,
+      template: `%s | ${SITE.name}`,
+    },
     description: SITE.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${SITE.name} — Same-Day Water Heater Service in Los Angeles`,
-    description: SITE.description,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    keywords: [
+      "water heater los angeles",
+      "tankless water heater los angeles",
+      "water heater installation",
+      "water heater repair",
+      "emergency water heater",
+      "water heater replacement",
+    ],
+    authors: [{ name: SITE.name }],
+    creator: SITE.name,
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: SITE.url,
+      siteName: SITE.name,
+      title: `${SITE.name} — Same-Day Water Heater Service in Los Angeles`,
+      description: SITE.description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${SITE.name} — Same-Day Water Heater Service in Los Angeles`,
+      description: SITE.description,
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-  alternates: {
-    canonical: SITE.url,
-  },
-  icons: {
-    icon: [
-      { url: "/assets/img/logo.png", type: "image/png", sizes: "any" },
-      { url: "/assets/img/logo.png", type: "image/png", sizes: "32x32" },
-      { url: "/assets/img/logo.png", type: "image/png", sizes: "16x16" },
-    ],
-    shortcut: "/assets/img/logo.png",
-    apple: [
-      { url: "/assets/img/logo.png", sizes: "180x180" },
-    ],
-  },
-};
+    alternates: {
+      canonical: SITE.url,
+    },
+    icons: {
+      icon: [
+        { url: "/assets/img/logo.png", type: "image/png", sizes: "any" },
+        { url: "/assets/img/logo.png", type: "image/png", sizes: "32x32" },
+        { url: "/assets/img/logo.png", type: "image/png", sizes: "16x16" },
+      ],
+      shortcut: "/assets/img/logo.png",
+      apple: [
+        { url: "/assets/img/logo.png", sizes: "180x180" },
+      ],
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -89,27 +92,29 @@ export const viewport: Viewport = {
   themeColor: "#FF6B00",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const site = await getSite();
+
   // Plumber-level JSON-LD schema for entire site
   const plumberSchema = {
     "@context": "https://schema.org",
     "@type": "Plumber",
-    "@id": SITE.url,
-    name: SITE.name,
-    description: SITE.description,
-    url: SITE.url,
-    telephone: SITE.phone,
-    email: SITE.email,
+    "@id": site.url,
+    name: site.name,
+    description: site.description,
+    url: site.url,
+    telephone: site.phone,
+    email: site.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: SITE.address.street,
-      addressLocality: SITE.address.city,
-      addressRegion: SITE.address.state,
-      postalCode: SITE.address.zip,
+      streetAddress: site.address.street,
+      addressLocality: site.address.city,
+      addressRegion: site.address.state,
+      postalCode: site.address.zip,
       addressCountry: "US",
     },
     geo: {
@@ -128,8 +133,8 @@ export default function RootLayout({
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: SITE.rating,
-      reviewCount: SITE.reviewCount,
+      ratingValue: site.rating,
+      reviewCount: site.reviewCount,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -138,7 +143,7 @@ export default function RootLayout({
       closes: "23:59",
     },
     priceRange: "$$",
-    sameAs: [SITE.social.yelp],
+    sameAs: [site.social.yelp],
   };
 
   return (
@@ -150,10 +155,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <Header />
+        <Header site={site} />
         <main className="pb-20 lg:pb-0">{children}</main>
         <Footer />
-        <StickyMobileCTA />
+        <StickyMobileCTA site={site} />
       </body>
     </html>
   );

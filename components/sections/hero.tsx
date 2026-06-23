@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Phone, Star, Clock, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/badge";
 
@@ -16,7 +16,7 @@ interface HeroProps {
   variant?: "primary" | "compact";
 }
 
-export function Hero({
+export async function Hero({
   badge,
   headline,
   highlight,
@@ -26,6 +26,7 @@ export function Hero({
   bullets = ["Same-day service", "Licensed & insured", "30-min response", "Free estimates"],
   variant = "primary",
 }: HeroProps) {
+  const SITE = await getSite();
   return (
     <section
       className={cn(

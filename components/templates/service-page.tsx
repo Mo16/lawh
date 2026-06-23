@@ -1,6 +1,6 @@
 import type { ServiceData } from "@/data/services";
-import { FAQS } from "@/data/faqs";
-import { SITE } from "@/data/site";
+import type { FAQ } from "@/data/faqs";
+import { getSite, getFaqs } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import {
   TrustBar, ProblemSolution, WhatsIncluded, Process, WhyUs,
@@ -13,8 +13,9 @@ interface ServicePageProps {
   showEmergencyStrip?: boolean;
 }
 
-export function ServicePageTemplate({ service, showEmergencyStrip }: ServicePageProps) {
-  const faqs = FAQS[service.faqKey] || FAQS.general;
+export async function ServicePageTemplate({ service, showEmergencyStrip }: ServicePageProps) {
+  const [SITE, FAQS] = await Promise.all([getSite(), getFaqs()]);
+  const faqs: FAQ[] = FAQS[service.faqKey] || FAQS.general;
 
   // JSON-LD Service schema
   const serviceSchema = {

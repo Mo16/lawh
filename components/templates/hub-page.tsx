@@ -3,10 +3,10 @@ import {
   Phone, ArrowRight, Star, Clock, ShieldCheck, CheckCircle2,
   DollarSign, Zap, Wrench,
 } from "lucide-react";
-import { SITE } from "@/data/site";
-import { SERVICES, type ServiceData } from "@/data/services";
-import { BRANDS } from "@/data/brands";
-import { FAQS, type FAQ } from "@/data/faqs";
+import type { ServiceData } from "@/data/services";
+import type { FAQ } from "@/data/faqs";
+import { getSite, getServices, getBrands, getFaqs } from "@/lib/content";
+import { getIcon } from "@/lib/icons";
 import {
   TrustBar, Process, WhyUs, ReviewsSection, FAQSection, FinalCTA,
   ServiceAreasGrid, EmergencySection,
@@ -29,10 +29,12 @@ interface HubPageProps {
  * Built for SEO topic-cluster pillar pages: maximum internal linking to child
  * service pages, comprehensive content depth, and aggressive CRO.
  */
-export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
+export async function HubPageTemplate({ category, service, faqs }: HubPageProps) {
+  const [SITE, SERVICES, BRANDS, FAQS] = await Promise.all([getSite(), getServices(), getBrands(), getFaqs()]);
+
   // Children = every service of this category, EXCLUDING this hub itself.
   const childServices = SERVICES.filter(
-    s => s.category === category && s.slug !== service.slug
+    (s: ServiceData) => s.category === category && s.slug !== service.slug
   );
 
   const filteredBrands = BRANDS.filter(b => b.category === category);
@@ -44,7 +46,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
       ...(category === "tankless" ? FAQS.tankless : FAQS.tank),
       ...FAQS.general.slice(0, 3),
       ...FAQS.maintenance.slice(0, 2),
-    ].filter((f, i, arr) => arr.findIndex(x => x.q === f.q) === i);
+    ].filter((f: FAQ, i: number, arr: FAQ[]) => arr.findIndex((x: FAQ) => x.q === f.q) === i);
 
   // Comparison data — tailored to category intent
   const comparison =
@@ -129,7 +131,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: service.h1,
-    itemListElement: childServices.map((child, i) => ({
+    itemListElement: childServices.map((child: ServiceData, i: number) => ({
       "@type": "ListItem",
       position: i + 1,
       url: `${SITE.url}/${child.slug}`,
@@ -166,7 +168,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: `${service.h1} Catalog`,
-      itemListElement: childServices.map(c => ({
+      itemListElement: childServices.map((c: ServiceData) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: c.h1, url: `${SITE.url}/${c.slug}` },
       })),
@@ -176,7 +178,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: hubFaqs.map(f => ({
+    mainEntity: hubFaqs.map((f: FAQ) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -283,21 +285,24 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
                     Jump to a service
                   </div>
                   <div className="mt-4 space-y-1.5">
-                    {childServices.slice(0, 6).map(child => (
-                      <Link
-                        key={child.slug}
-                        href={`/${child.slug}`}
-                        className="group flex items-center justify-between gap-3 rounded-2xl bg-sky-50 px-4 py-3 transition-all hover:bg-primary-50"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-primary-700 ring-1 ring-ink/5">
-                            <child.icon className="h-4 w-4" />
+                    {childServices.slice(0, 6).map((child: ServiceData) => {
+                      const Icon = getIcon(child.icon);
+                      return (
+                        <Link
+                          key={child.slug}
+                          href={`/${child.slug}`}
+                          className="group flex items-center justify-between gap-3 rounded-2xl bg-sky-50 px-4 py-3 transition-all hover:bg-primary-50"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-primary-700 ring-1 ring-ink/5">
+                              <Icon className="h-4 w-4" />
+                            </div>
+                            <div className="text-sm font-semibold text-ink">{child.badge}</div>
                           </div>
-                          <div className="text-sm font-semibold text-ink">{child.badge}</div>
-                        </div>
-                        <ArrowRight className="h-4 w-4 text-ink/40 transition-transform group-hover:translate-x-1 group-hover:text-primary-600" />
-                      </Link>
-                    ))}
+                          <ArrowRight className="h-4 w-4 text-ink/40 transition-transform group-hover:translate-x-1 group-hover:text-primary-600" />
+                        </Link>
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
@@ -361,8 +366,9 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
           </div>
 
           <ul className="mt-12 divide-y divide-ink/5 overflow-hidden rounded-3xl bg-white ring-1 ring-ink/5 shadow-card">
-            {childServices.map((child, idx) => {
+            {childServices.map((child: ServiceData, idx: number) => {
               const features = child.whatsIncluded.slice(0, 3);
+              const Icon = getIcon(child.icon);
               return (
                 <li key={child.slug} id={child.slug}>
                   <Link
@@ -379,7 +385,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
                       />
                       <div className="absolute inset-0 bg-ink/25" />
                       <div className="absolute left-2 top-2 flex h-7 w-7 items-center justify-center rounded-lg bg-white text-primary-700 shadow-sm">
-                        <child.icon className="h-3.5 w-3.5" />
+                        <Icon className="h-3.5 w-3.5" />
                       </div>
                     </div>
 
@@ -397,7 +403,7 @@ export function HubPageTemplate({ category, service, faqs }: HubPageProps) {
                         {child.shortDesc}
                       </p>
                       <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
-                        {features.map((f, i) => (
+                        {features.map((f: { title: string; desc: string }, i: number) => (
                           <li key={i} className="flex items-center gap-1.5 text-xs text-ink/75">
                             <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-primary-600" />
                             <span className="font-medium text-ink/85">{f.title}</span>

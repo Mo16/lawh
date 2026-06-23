@@ -1,22 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, ArrowRight, Phone } from "lucide-react";
-import { SITE } from "@/data/site";
-import { LOCATIONS, ADDITIONAL_AREAS } from "@/data/locations";
+import { getSite, getLocations, getAdditionalAreas, getFaqs } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, ReviewsSection, FinalCTA, FAQSection } from "@/components/sections/blocks";
-import { FAQS } from "@/data/faqs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const metadata: Metadata = {
-  title: "Water Heater Services Across Los Angeles County",
-  description: `${SITE.name} serves all of LA County including Hollywood, Beverly Hills, Santa Monica, Pasadena, Burbank, Glendale. 30-min response. Call ${SITE.phone}.`,
-  alternates: { canonical: `${SITE.url}/service-areas` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: "Water Heater Services Across Los Angeles County",
+    description: `${SITE.name} serves all of LA County including Hollywood, Beverly Hills, Santa Monica, Pasadena, Burbank, Glendale. 30-min response. Call ${SITE.phone}.`,
+    alternates: { canonical: `${SITE.url}/service-areas` },
+  };
+}
 
-export default function ServiceAreasPage() {
+export default async function ServiceAreasPage() {
+  const [SITE, LOCATIONS, ADDITIONAL_AREAS, FAQS] = await Promise.all([
+    getSite(),
+    getLocations(),
+    getAdditionalAreas(),
+    getFaqs(),
+  ]);
+
   return (
     <>
       <Hero

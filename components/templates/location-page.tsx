@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { MapPin, CheckCircle2, ArrowRight, Phone } from "lucide-react";
 import type { LocationData } from "@/data/locations";
-import { LOCATIONS } from "@/data/locations";
-import { FAQS } from "@/data/faqs";
-import { SITE } from "@/data/site";
-import { SERVICES } from "@/data/services";
+import type { FAQ } from "@/data/faqs";
+import { getSite, getFaqs, getServices } from "@/lib/content";
+import { getIcon } from "@/lib/icons";
 import { Hero } from "@/components/sections/hero";
 import {
   TrustBar, Process, WhyUs, ReviewsSection, FAQSection, FinalCTA, EmergencyStrip,
@@ -17,8 +16,9 @@ interface LocationPageProps {
   location: LocationData;
 }
 
-export function LocationPageTemplate({ location }: LocationPageProps) {
-  const faqs = FAQS.general;
+export async function LocationPageTemplate({ location }: LocationPageProps) {
+  const [SITE, FAQS, SERVICES] = await Promise.all([getSite(), getFaqs(), getServices()]);
+  const faqs: FAQ[] = FAQS.general;
 
   // Top services to feature on this location page
   const featuredServices = [
@@ -26,7 +26,7 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
     SERVICES.find(s => s.slug === "water-heater-repair")!,
     SERVICES.find(s => s.slug === "tankless-water-heater-installation")!,
     SERVICES.find(s => s.slug === "emergency-water-heater-repair")!,
-  ];
+  ].filter(Boolean);
 
   // LocalBusiness schema
   const localBusinessSchema = {
@@ -145,31 +145,34 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {featuredServices.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/${s.slug}`}
-                className="group block"
-              >
-                <Card className="h-full transition-all hover:-translate-y-1 hover:border-accent-300 hover:shadow-card-hover">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-500 text-white shadow-md">
-                        <s.icon className="h-6 w-6" />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="text-lg font-bold group-hover:text-primary-700">{s.badge}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground">{s.shortDesc}</p>
-                        <div className="mt-3 flex items-center gap-1.5 text-sm font-semibold text-accent-600">
-                          Learn more
-                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            {featuredServices.map((s) => {
+              const Icon = getIcon(s.icon);
+              return (
+                <Link
+                  key={s.slug}
+                  href={`/${s.slug}`}
+                  className="group block"
+                >
+                  <Card className="h-full transition-all hover:-translate-y-1 hover:border-accent-300 hover:shadow-card-hover">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-500 text-white shadow-md">
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-lg font-bold group-hover:text-primary-700">{s.badge}</h3>
+                          <p className="mt-1 text-sm text-muted-foreground">{s.shortDesc}</p>
+                          <div className="mt-3 flex items-center gap-1.5 text-sm font-semibold text-accent-600">
+                            Learn more
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

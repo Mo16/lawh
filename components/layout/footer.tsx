@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, ShieldCheck, Star, Facebook } from "lucide-react";
-import { SITE } from "@/data/site";
-import { LOCATIONS } from "@/data/locations";
+import { getSite, getLocations } from "@/lib/content";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 
-export function Footer() {
+export async function Footer() {
+  const [SITE, locations] = await Promise.all([getSite(), getLocations()]);
   const year = new Date().getFullYear();
   return (
     <footer>
@@ -68,7 +68,7 @@ export function Footer() {
             <div className="lg:col-span-2">
               <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-white">Service Areas</h4>
               <ul className="space-y-2.5 text-sm">
-                {LOCATIONS.map(l => (
+                {locations.map(l => (
                   <li key={l.slug}><Link href={`/${l.slug}`}>{l.name}</Link></li>
                 ))}
               </ul>

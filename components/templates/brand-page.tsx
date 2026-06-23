@@ -3,8 +3,8 @@ import {
   CheckCircle2, AlertCircle, Award, ShieldCheck, Phone, Star, Clock, ArrowRight,
 } from "lucide-react";
 import type { BrandData } from "@/data/brands";
-import { FAQS } from "@/data/faqs";
-import { SITE } from "@/data/site";
+import type { FAQ } from "@/data/faqs";
+import { getSite, getFaqs } from "@/lib/content";
 import {
   TrustBar, Process, WhyUs, ReviewsSection, FAQSection, FinalCTA, ServiceAreasGrid,
 } from "@/components/sections/blocks";
@@ -16,8 +16,9 @@ interface BrandPageProps {
   brand: BrandData;
 }
 
-export function BrandPageTemplate({ brand }: BrandPageProps) {
-  const faqs = brand.category === "tankless" ? FAQS.tankless : FAQS.tank;
+export async function BrandPageTemplate({ brand }: BrandPageProps) {
+  const [SITE, FAQS] = await Promise.all([getSite(), getFaqs()]);
+  const faqs: FAQ[] = brand.category === "tankless" ? FAQS.tankless : FAQS.tank;
 
   // Brand schema
   const brandSchema = {

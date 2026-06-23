@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import { ShieldCheck, Award, Users, Clock, Star, Wrench, Zap } from "lucide-react";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, ReviewsSection, FinalCTA, ServiceAreasGrid } from "@/components/sections/blocks";
 import { Badge, SectionLabel } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const metadata: Metadata = {
-  title: `About ${SITE.name} — LA's Trusted Water Heater Experts`,
-  description: `Learn about ${SITE.name}. ${SITE.years}+ years serving Los Angeles, ${SITE.reviewCount}+ five-star reviews, and 100% satisfaction guarantee. Licensed and insured.`,
-  alternates: { canonical: `${SITE.url}/about` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: `About ${SITE.name} — LA's Trusted Water Heater Experts`,
+    description: `Learn about ${SITE.name}. ${SITE.years}+ years serving Los Angeles, ${SITE.reviewCount}+ five-star reviews, and 100% satisfaction guarantee. Licensed and insured.`,
+    alternates: { canonical: `${SITE.url}/about` },
+  };
+}
 
 const VALUES = [
   { icon: ShieldCheck, title: "Licensed & Insured", desc: `Fully licensed, bonded, and insured for your protection.` },
@@ -19,14 +22,16 @@ const VALUES = [
   { icon: Award, title: "100% Satisfaction Guarantee", desc: "If you're not 100% satisfied with our work, we make it right — guaranteed." },
 ];
 
-const STATS = [
-  { value: `${SITE.years}+`, label: "Years in business" },
-  { value: SITE.rating.toString(), label: "Average rating" },
-  { value: `${SITE.reviewCount}+`, label: "5-star reviews" },
-  { value: "30 min", label: "Avg response time" },
-];
+export default async function AboutPage() {
+  const SITE = await getSite();
 
-export default function AboutPage() {
+  const STATS = [
+    { value: `${SITE.years}+`, label: "Years in business" },
+    { value: SITE.rating.toString(), label: "Average rating" },
+    { value: `${SITE.reviewCount}+`, label: "5-star reviews" },
+    { value: "30 min", label: "Avg response time" },
+  ];
+
   return (
     <>
       <Hero

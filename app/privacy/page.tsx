@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { SITE } from "@/data/site";
+import { getSite } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `Privacy policy for ${SITE.name}.`,
-  alternates: { canonical: `${SITE.url}/privacy` },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const SITE = await getSite();
+  return {
+    title: "Privacy Policy",
+    description: `Privacy policy for ${SITE.name}.`,
+    alternates: { canonical: `${SITE.url}/privacy` },
+  };
+}
 
-export default function PrivacyPage() {
+export default async function PrivacyPage() {
+  const SITE = await getSite();
+
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="container-narrow">

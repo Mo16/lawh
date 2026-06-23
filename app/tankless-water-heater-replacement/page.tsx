@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { ServicePageTemplate } from "@/components/templates/service-page";
-import { SERVICE_BY_SLUG } from "@/data/services";
-
-const service = SERVICE_BY_SLUG["tankless-water-heater-replacement"];
+import { getService } from "@/lib/content";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Tankless Water Heater Replacement in Los Angeles",
@@ -16,6 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TanklessWaterHeaterReplacementPage() {
+export default async function TanklessWaterHeaterReplacementPage() {
+  const service = await getService("tankless-water-heater-replacement");
+  if (!service) notFound();
   return <ServicePageTemplate service={service} />;
 }
