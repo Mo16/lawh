@@ -1,8 +1,6 @@
-import type { ElementType } from "react";
 import Link from "next/link";
 import {
-  Phone, ArrowRight, Flame, Zap, Settings, RefreshCw, ShieldCheck,
-  AlertTriangle,
+  Phone, ArrowRight,
 } from "lucide-react";
 import { getSite, getServices, getBrands, getFaqs, getPage } from "@/lib/content";
 import { getIcon } from "@/lib/icons";
@@ -128,8 +126,7 @@ export default async function HomePage() {
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {(home.problemsSection.issues as Array<{ icon: string; title: string; desc: string }>).map((it, i) => {
-                const iconMap: Record<string, ElementType> = { Flame, AlertTriangle, Zap, RefreshCw, Settings, ShieldCheck };
-                const Icon = iconMap[it.icon] ?? Flame;
+                const Icon = getIcon(it.icon);
                 return (
                   <div
                     key={i}
