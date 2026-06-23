@@ -7,3 +7,7 @@ build/
 .env.production
 .DS_Store
 *.log
+
+# Admin CMS uploads (keep the folder, ignore contents)
+/public/uploads/*
+!/public/uploads/.gitkeep
