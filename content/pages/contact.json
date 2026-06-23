@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "badge": "Get in Touch",
+    "headlinePrefix": "Get a",
+    "headlineHighlight": "Free Quote",
+    "subheadline": "Same-day service across LA. Call us now or fill out the form — we respond within minutes."
+  },
+  "callCard": {
+    "heading": "Call Us Now",
+    "subtext": "Real person, no phone trees. Available 24/7.",
+    "callLabel": "Call"
+  },
+  "infoLabels": {
+    "emailLabel": "Email",
+    "officeLabel": "Office",
+    "hoursLabel": "Hours",
+    "hoursNote": "No overtime charges, ever."
+  },
+  "formCard": {
+    "heading": "Request a Free Quote",
+    "introPart1": "Fill this out — we'll respond within minutes. Or call us directly:",
+    "fieldNameLabel": "Your Name *",
+    "fieldPhoneLabel": "Phone Number *",
+    "fieldEmailLabel": "Email",
+    "fieldServiceLabel": "Service Needed *",
+    "fieldServicePlaceholder": "Select a service...",
+    "fieldAddressLabel": "Service Address (City)",
+    "fieldAddressPlaceholder": "e.g. Hollywood, Burbank, Pasadena",
+    "fieldMessageLabel": "Tell Us About the Issue",
+    "fieldMessagePlaceholder": "What's happening? When did it start?",
+    "submitButtonText": "Send Quote Request",
+    "disclaimerPart1": "By submitting, you agree to be contacted by",
+    "disclaimerPart2": "We'll never spam you.",
+    "serviceOptions": [
+      { "value": "install", "label": "Water Heater Installation" },
+      { "value": "repair", "label": "Water Heater Repair" },
+      { "value": "replace", "label": "Water Heater Replacement" },
+      { "value": "tankless", "label": "Tankless Installation/Repair" },
+      { "value": "emergency", "label": "Emergency Service" },
+      { "value": "maintenance", "label": "Maintenance / Tune-Up" },
+      { "value": "other", "label": "Other" }
+    ]
+  },
+  "successMessage": {
+    "heading": "Got it! We'll be in touch shortly.",
+    "subtext": "For immediate help, call"
+  }
+}

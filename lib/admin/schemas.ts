@@ -172,6 +172,53 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/contact": {
+    key: "pages/contact",
+    title: "Contact Page",
+    fields: [
+      { name: "hero", label: "Hero", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "headlinePrefix", label: "Headline prefix", type: "text" },
+        { name: "headlineHighlight", label: "Headline highlight (coloured)", type: "text" },
+        { name: "subheadline", label: "Subheadline", type: "textarea" },
+      ]},
+      { name: "callCard", label: "Call Card", type: "group", of: [
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "subtext", label: "Subtext", type: "text" },
+        { name: "callLabel", label: "Call label", type: "text" },
+      ]},
+      { name: "infoLabels", label: "Info Labels", type: "group", of: [
+        { name: "emailLabel", label: "Email label", type: "text" },
+        { name: "officeLabel", label: "Office label", type: "text" },
+        { name: "hoursLabel", label: "Hours label", type: "text" },
+        { name: "hoursNote", label: "Hours note", type: "text" },
+      ]},
+      { name: "formCard", label: "Form Card", type: "group", of: [
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "introPart1", label: "Intro text (before phone number)", type: "textarea" },
+        { name: "fieldNameLabel", label: "Name field label", type: "text" },
+        { name: "fieldPhoneLabel", label: "Phone field label", type: "text" },
+        { name: "fieldEmailLabel", label: "Email field label", type: "text" },
+        { name: "fieldServiceLabel", label: "Service field label", type: "text" },
+        { name: "fieldServicePlaceholder", label: "Service placeholder", type: "text" },
+        { name: "fieldAddressLabel", label: "Address field label", type: "text" },
+        { name: "fieldAddressPlaceholder", label: "Address placeholder", type: "text" },
+        { name: "fieldMessageLabel", label: "Message field label", type: "text" },
+        { name: "fieldMessagePlaceholder", label: "Message placeholder", type: "text" },
+        { name: "submitButtonText", label: "Submit button text", type: "text" },
+        { name: "disclaimerPart1", label: "Disclaimer part 1 (before site name)", type: "text" },
+        { name: "disclaimerPart2", label: "Disclaimer part 2 (after site name)", type: "text" },
+        { name: "serviceOptions", label: "Service options", type: "repeatable", of: [
+          { name: "value", label: "Value", type: "text" },
+          { name: "label", label: "Label", type: "text" },
+        ]},
+      ]},
+      { name: "successMessage", label: "Success Message", type: "group", of: [
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "subtext", label: "Subtext (before phone number)", type: "text" },
+      ]},
+    ],
+  },
   faqs: {
     key: "faqs",
     title: "FAQs",

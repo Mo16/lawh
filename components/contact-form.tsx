@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-export function ContactForm({ site }: { site: SiteData }) {
+export function ContactForm({ site, content }: { site: SiteData; content: any }) {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -32,11 +32,11 @@ export function ContactForm({ site }: { site: SiteData }) {
         <div className="absolute -right-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary-500/15 blur-3xl" />
         <div className="container-tight relative text-center">
           <Badge variant="dark" className="mb-3">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-300" /> Get in Touch
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-300" /> {content.hero.badge}
           </Badge>
-          <h1 className="text-white">Get a <span className="text-primary-300">Free Quote</span></h1>
+          <h1 className="text-white">{content.hero.headlinePrefix} <span className="text-primary-300">{content.hero.headlineHighlight}</span></h1>
           <p className="mx-auto mt-5 max-w-xl text-base text-white/70 sm:text-lg">
-            Same-day service across LA. Call us now or fill out the form — we respond within minutes.
+            {content.hero.subheadline}
           </p>
         </div>
       </section>
@@ -49,8 +49,8 @@ export function ContactForm({ site }: { site: SiteData }) {
             <div className="space-y-4 lg:col-span-5">
               <Card className="bg-primary-700 text-white">
                 <CardContent className="p-6 sm:p-8">
-                  <h3 className="text-white">Call Us Now</h3>
-                  <p className="mt-2 text-sm text-white/80">Real person, no phone trees. Available 24/7.</p>
+                  <h3 className="text-white">{content.callCard.heading}</h3>
+                  <p className="mt-2 text-sm text-white/80">{content.callCard.subtext}</p>
                   <a
                     href={site.phoneTel}
                     className="mt-4 flex items-center gap-3 rounded-2xl bg-white/10 p-4 transition-colors hover:bg-white/20"
@@ -59,7 +59,7 @@ export function ContactForm({ site }: { site: SiteData }) {
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xs uppercase tracking-wider text-white/60">Call</div>
+                      <div className="text-xs uppercase tracking-wider text-white/60">{content.callCard.callLabel}</div>
                       <div className="font-display text-2xl font-black">{site.phoneDisplay}</div>
                     </div>
                   </a>
@@ -73,7 +73,7 @@ export function ContactForm({ site }: { site: SiteData }) {
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Email</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{content.infoLabels.emailLabel}</div>
                       <a href={`mailto:${site.email}`} className="text-base font-semibold hover:text-primary-700">
                         {site.email}
                       </a>
@@ -89,7 +89,7 @@ export function ContactForm({ site }: { site: SiteData }) {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Office</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{content.infoLabels.officeLabel}</div>
                       <div className="text-base font-semibold">{site.address.full}</div>
                     </div>
                   </div>
@@ -103,9 +103,9 @@ export function ContactForm({ site }: { site: SiteData }) {
                       <Clock className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Hours</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{content.infoLabels.hoursLabel}</div>
                       <div className="text-base font-semibold">{site.hours}</div>
-                      <div className="mt-1 text-sm text-muted-foreground">No overtime charges, ever.</div>
+                      <div className="mt-1 text-sm text-muted-foreground">{content.infoLabels.hoursNote}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -116,22 +116,22 @@ export function ContactForm({ site }: { site: SiteData }) {
             <div className="lg:col-span-7">
               <Card>
                 <CardContent className="p-6 sm:p-8">
-                  <h3>Request a Free Quote</h3>
+                  <h3>{content.formCard.heading}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Fill this out — we'll respond within minutes. Or call us directly: {site.phone}
+                    {content.formCard.introPart1} {site.phone}
                   </p>
 
                   {submitted ? (
                     <div className="mt-6 rounded-xl bg-green-50 p-6 text-center">
                       <CheckCircle2 className="mx-auto mb-3 h-10 w-10 text-green-600" />
-                      <h4 className="text-green-900">Got it! We'll be in touch shortly.</h4>
-                      <p className="mt-2 text-sm text-green-800">For immediate help, call {site.phoneDisplay}</p>
+                      <h4 className="text-green-900">{content.successMessage.heading}</h4>
+                      <p className="mt-2 text-sm text-green-800">{content.successMessage.subtext} {site.phoneDisplay}</p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div>
-                          <label className="mb-1.5 block text-sm font-semibold">Your Name *</label>
+                          <label className="mb-1.5 block text-sm font-semibold">{content.formCard.fieldNameLabel}</label>
                           <input
                             type="text"
                             required
@@ -141,7 +141,7 @@ export function ContactForm({ site }: { site: SiteData }) {
                           />
                         </div>
                         <div>
-                          <label className="mb-1.5 block text-sm font-semibold">Phone Number *</label>
+                          <label className="mb-1.5 block text-sm font-semibold">{content.formCard.fieldPhoneLabel}</label>
                           <input
                             type="tel"
                             required
@@ -153,7 +153,7 @@ export function ContactForm({ site }: { site: SiteData }) {
                       </div>
 
                       <div>
-                        <label className="mb-1.5 block text-sm font-semibold">Email</label>
+                        <label className="mb-1.5 block text-sm font-semibold">{content.formCard.fieldEmailLabel}</label>
                         <input
                           type="email"
                           value={form.email}
@@ -163,51 +163,47 @@ export function ContactForm({ site }: { site: SiteData }) {
                       </div>
 
                       <div>
-                        <label className="mb-1.5 block text-sm font-semibold">Service Needed *</label>
+                        <label className="mb-1.5 block text-sm font-semibold">{content.formCard.fieldServiceLabel}</label>
                         <select
                           required
                           value={form.service}
                           onChange={(e) => setForm({ ...form, service: e.target.value })}
                           className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                         >
-                          <option value="">Select a service...</option>
-                          <option value="install">Water Heater Installation</option>
-                          <option value="repair">Water Heater Repair</option>
-                          <option value="replace">Water Heater Replacement</option>
-                          <option value="tankless">Tankless Installation/Repair</option>
-                          <option value="emergency">Emergency Service</option>
-                          <option value="maintenance">Maintenance / Tune-Up</option>
-                          <option value="other">Other</option>
+                          <option value="">{content.formCard.fieldServicePlaceholder}</option>
+                          {(content.formCard.serviceOptions as Array<{ value: string; label: string }>).map((opt) => (
+                            <option key={opt.value} value={opt.value}>{opt.label}</option>
+                          ))}
                         </select>
                       </div>
 
                       <div>
-                        <label className="mb-1.5 block text-sm font-semibold">Service Address (City)</label>
+                        <label className="mb-1.5 block text-sm font-semibold">{content.formCard.fieldAddressLabel}</label>
                         <input
                           type="text"
                           value={form.address}
                           onChange={(e) => setForm({ ...form, address: e.target.value })}
-                          placeholder="e.g. Hollywood, Burbank, Pasadena"
+                          placeholder={content.formCard.fieldAddressPlaceholder}
                           className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                         />
                       </div>
 
                       <div>
-                        <label className="mb-1.5 block text-sm font-semibold">Tell Us About the Issue</label>
+                        <label className="mb-1.5 block text-sm font-semibold">{content.formCard.fieldMessageLabel}</label>
                         <textarea
                           rows={4}
                           value={form.message}
                           onChange={(e) => setForm({ ...form, message: e.target.value })}
-                          placeholder="What's happening? When did it start?"
+                          placeholder={content.formCard.fieldMessagePlaceholder}
                           className="w-full resize-none rounded-lg border border-border bg-white px-4 py-2.5 text-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                         />
                       </div>
 
                       <Button type="submit" size="lg" className="w-full">
-                        <Send className="h-4 w-4" /> Send Quote Request
+                        <Send className="h-4 w-4" /> {content.formCard.submitButtonText}
                       </Button>
                       <p className="text-center text-xs text-muted-foreground">
-                        By submitting, you agree to be contacted by {site.name}. We'll never spam you.
+                        {content.formCard.disclaimerPart1} {site.name}. {content.formCard.disclaimerPart2}
                       </p>
                     </form>
                   )}
