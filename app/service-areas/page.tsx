@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, ArrowRight, Phone } from "lucide-react";
-import { getSite, getLocations, getAdditionalAreas, getFaqs } from "@/lib/content";
+import { getSite, getLocations, getAdditionalAreas, getFaqs, getPage } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, ReviewsSection, FinalCTA, FAQSection } from "@/components/sections/blocks";
 import { Button } from "@/components/ui/button";
@@ -18,23 +18,24 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ServiceAreasPage() {
-  const [SITE, LOCATIONS, ADDITIONAL_AREAS, FAQS] = await Promise.all([
+  const [SITE, LOCATIONS, ADDITIONAL_AREAS, FAQS, sa] = await Promise.all([
     getSite(),
     getLocations(),
     getAdditionalAreas(),
     getFaqs(),
+    getPage("service-areas"),
   ]);
 
   return (
     <>
       <Hero
-        badge="📍 Service Areas"
-        headline="Water Heater Services Across"
-        highlight="Los Angeles County"
-        subheadline="From Hollywood to Pasadena, Beverly Hills to Burbank — we're 30 minutes away from your hot water emergency."
-        image="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1600&h=1000&fit=crop&q=80"
-        imageAlt="Los Angeles skyline service area"
-        bullets={["6+ neighborhoods served", "30-min response", "Same-day service", "24/7 emergency coverage"]}
+        badge={sa.hero.badge}
+        headline={sa.hero.headline}
+        highlight={sa.hero.highlight}
+        subheadline={sa.hero.subheadline}
+        image={sa.hero.image}
+        imageAlt={sa.hero.imageAlt}
+        bullets={sa.hero.bullets}
       />
 
       <TrustBar />
@@ -43,10 +44,10 @@ export default async function ServiceAreasPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="container-tight">
           <div className="mx-auto mb-10 max-w-2xl text-center">
-            <Badge variant="default" className="mb-3">All Locations</Badge>
-            <h2>Find Your Neighborhood</h2>
+            <Badge variant="default" className="mb-3">{sa.locationsSection.badge}</Badge>
+            <h2>{sa.locationsSection.heading}</h2>
             <p className="mt-3 text-base text-muted-foreground">
-              Click your area to see services, reviews, and local specialists.
+              {sa.locationsSection.paragraph}
             </p>
           </div>
 
@@ -90,10 +91,10 @@ export default async function ServiceAreasPage() {
           {/* Additional neighborhoods served (no dedicated pages) */}
           <div className="mt-12 rounded-3xl bg-sky-50 p-7 ring-1 ring-ink/5 sm:p-10">
             <div className="mx-auto max-w-2xl text-center">
-              <Badge variant="default" className="mb-3">More Neighborhoods</Badge>
-              <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">We also serve every corner of LA</h3>
+              <Badge variant="default" className="mb-3">{sa.additionalAreasSection.badge}</Badge>
+              <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">{sa.additionalAreasSection.heading}</h3>
               <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-                Same 30-minute response, same upfront pricing — across these areas too.
+                {sa.additionalAreasSection.paragraph}
               </p>
             </div>
             <ul className="mx-auto mt-6 flex max-w-4xl flex-wrap justify-center gap-2">
@@ -113,9 +114,9 @@ export default async function ServiceAreasPage() {
       {/* Don't see yours? */}
       <section className="bg-muted/30 py-16 sm:py-20">
         <div className="container-tight text-center">
-          <h2>Don't see your neighborhood?</h2>
+          <h2>{sa.notListedSection.heading}</h2>
           <p className="mx-auto mt-3 max-w-xl text-base text-muted-foreground sm:text-lg">
-            We serve all of Los Angeles County. Call us — if you're in LA, we can help.
+            {sa.notListedSection.paragraph}
           </p>
           <Button asChild size="xl" variant="call" className="mt-6">
             <a href={SITE.phoneTel}>

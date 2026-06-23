@@ -321,6 +321,35 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/service-areas": {
+    key: "pages/service-areas",
+    title: "Service Areas Page",
+    fields: [
+      { name: "hero", label: "Hero", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "headline", label: "Headline", type: "text" },
+        { name: "highlight", label: "Highlight (coloured word)", type: "text" },
+        { name: "subheadline", label: "Subheadline", type: "textarea" },
+        { name: "image", label: "Hero image", type: "image" },
+        { name: "imageAlt", label: "Image alt text", type: "text" },
+        { name: "bullets", label: "Bullet points", type: "list" },
+      ]},
+      { name: "locationsSection", label: "Locations Section", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+      ]},
+      { name: "additionalAreasSection", label: "Additional Areas Section", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+      ]},
+      { name: "notListedSection", label: "Not Listed Section", type: "group", of: [
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+      ]},
+    ],
+  },
   faqs: {
     key: "faqs",
     title: "FAQs",

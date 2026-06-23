@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "badge": "📍 Service Areas",
+    "headline": "Water Heater Services Across",
+    "highlight": "Los Angeles County",
+    "subheadline": "From Hollywood to Pasadena, Beverly Hills to Burbank — we're 30 minutes away from your hot water emergency.",
+    "image": "https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1600&h=1000&fit=crop&q=80",
+    "imageAlt": "Los Angeles skyline service area",
+    "bullets": [
+      "6+ neighborhoods served",
+      "30-min response",
+      "Same-day service",
+      "24/7 emergency coverage"
+    ]
+  },
+  "locationsSection": {
+    "badge": "All Locations",
+    "heading": "Find Your Neighborhood",
+    "paragraph": "Click your area to see services, reviews, and local specialists."
+  },
+  "additionalAreasSection": {
+    "badge": "More Neighborhoods",
+    "heading": "We also serve every corner of LA",
+    "paragraph": "Same 30-minute response, same upfront pricing — across these areas too."
+  },
+  "notListedSection": {
+    "heading": "Don't see your neighborhood?",
+    "paragraph": "We serve all of Los Angeles County. Call us — if you're in LA, we can help."
+  }
+}
