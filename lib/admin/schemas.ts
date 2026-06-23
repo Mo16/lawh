@@ -164,6 +164,23 @@ export const BRAND_FIELDS: Field[] = [
   { name: "rating", label: "Rating", type: "text" },
 ];
 
+export const PAGE_KEYS: { key: string; label: string }[] = [
+  { key: "home", label: "Homepage" },
+  { key: "about", label: "About" },
+  { key: "contact", label: "Contact" },
+  { key: "financing", label: "Financing" },
+  { key: "faq", label: "FAQ page" },
+  { key: "privacy", label: "Privacy" },
+  { key: "terms", label: "Terms" },
+  { key: "service-areas", label: "Service Areas" },
+  { key: "blog", label: "Blog" },
+  { key: "commercial", label: "Commercial" },
+  { key: "residential", label: "Residential" },
+  { key: "tankless-services", label: "Tankless Services" },
+  { key: "water-heater-services", label: "Water Heater Services" },
+  { key: "tankless-rebates", label: "Tankless Rebates" },
+];
+
 export const COLLECTIONS: Record<string, { key: string; title: string; fields: Field[]; labelField: string }> = {
   services: { key: "services", title: "Services", fields: SERVICE_FIELDS, labelField: "title" },
   locations: { key: "locations", title: "Locations", fields: LOCATION_FIELDS, labelField: "name" },
