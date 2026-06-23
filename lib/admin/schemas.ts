@@ -17,6 +17,83 @@ export interface Schema {
 }
 
 export const SCHEMAS: Record<string, Schema> = {
+  sections: {
+    key: "sections",
+    title: "Shared Section Blocks",
+    fields: [
+      { name: "trustBar", label: "Trust Bar", type: "group", of: [
+        { name: "items", label: "Stat items (Licensed, 30 min, 20+ yrs, Same-day, 100%)", type: "repeatable", of: [
+          { name: "value", label: "Value", type: "text" },
+          { name: "label", label: "Label", type: "text" },
+        ]},
+      ]},
+      { name: "statsBand", label: "Stats Band", type: "group", of: [
+        { name: "sectionLabel", label: "Section label", type: "text" },
+        { name: "heading", label: "Heading (full text)", type: "text" },
+        { name: "headingHighlight", label: "Highlighted word in heading", type: "text" },
+        { name: "stats", label: "Stat labels (years, reviews, rating)", type: "repeatable", of: [
+          { name: "label", label: "Label", type: "text" },
+        ]},
+      ]},
+      { name: "emergencySection", label: "Emergency Section", type: "group", of: [
+        { name: "badge", label: "Badge text", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+        { name: "stat1Value", label: "Stat 1 value", type: "text" },
+        { name: "stat1Label", label: "Stat 1 label", type: "text" },
+        { name: "stat2Value", label: "Stat 2 value", type: "text" },
+        { name: "stat2Label", label: "Stat 2 label", type: "text" },
+        { name: "stat3Value", label: "Stat 3 value", type: "text" },
+        { name: "stat3Label", label: "Stat 3 label", type: "text" },
+        { name: "emergencyCtaLabel", label: "Emergency CTA label", type: "text" },
+        { name: "scenarios", label: "Emergency scenario cards", type: "repeatable", of: [
+          { name: "title", label: "Title", type: "text" },
+          { name: "desc", label: "Description", type: "textarea" },
+        ]},
+      ]},
+      { name: "emergencyStrip", label: "Emergency Strip", type: "group", of: [
+        { name: "text", label: "Strip text", type: "text" },
+        { name: "ctaLabel", label: "CTA label prefix", type: "text" },
+      ]},
+      { name: "process", label: "Process / How It Works", type: "group", of: [
+        { name: "sectionLabel", label: "Section label", type: "text" },
+        { name: "defaultTitle", label: "Default title", type: "text" },
+        { name: "defaultSubtitle", label: "Default subtitle", type: "textarea" },
+        { name: "defaultSteps", label: "Default steps", type: "repeatable", of: [
+          { name: "step", label: "Step number", type: "text" },
+          { name: "title", label: "Title", type: "text" },
+          { name: "desc", label: "Description", type: "textarea" },
+        ]},
+        { name: "ctaBookText", label: "Book CTA text", type: "text" },
+      ]},
+      { name: "whyUs", label: "Why Us", type: "group", of: [
+        { name: "sectionLabel", label: "Section label", type: "text" },
+        { name: "paragraph", label: "Paragraph prefix", type: "text" },
+        { name: "ctaBookText", label: "Book CTA text", type: "text" },
+      ]},
+      { name: "reviews", label: "Reviews Section", type: "group", of: [
+        { name: "sectionLabel", label: "Section label", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+      ]},
+      { name: "finalCta", label: "Final CTA", type: "group", of: [
+        { name: "sectionLabel", label: "Section label", type: "text" },
+        { name: "defaultHeadline", label: "Default headline", type: "text" },
+        { name: "defaultSubheadline", label: "Default subheadline", type: "textarea" },
+        { name: "ctaBookText", label: "Book CTA text", type: "text" },
+        { name: "badge1", label: "Badge 1", type: "text" },
+        { name: "badge2", label: "Badge 2", type: "text" },
+        { name: "badge3", label: "Badge 3", type: "text" },
+        { name: "badge4", label: "Badge 4", type: "text" },
+      ]},
+      { name: "serviceAreas", label: "Service Areas Grid", type: "group", of: [
+        { name: "sectionLabel", label: "Section label", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+        { name: "alsoServingLabel", label: "Also serving label", type: "text" },
+      ]},
+    ],
+  },
   site: {
     key: "site",
     title: "Site Settings",

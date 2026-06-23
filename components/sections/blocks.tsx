@@ -1,11 +1,10 @@
 import Link from "next/link";
 import {
   Phone, Star, Clock, ShieldCheck, CheckCircle2, ArrowRight,
-  Award, ThumbsUp, Truck, DollarSign, MapPin, AlertTriangle,
+  Award, ThumbsUp, Truck, MapPin, AlertTriangle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getSite, getLocations, getAdditionalAreas, getReviews } from "@/lib/content";
-import { getIcon } from "@/lib/icons";
+import { getSite, getLocations, getAdditionalAreas, getReviews, getSections } from "@/lib/content";
 import type { FAQ } from "@/data/faqs";
 import { Button } from "@/components/ui/button";
 import { Badge, SectionLabel } from "@/components/ui/badge";
@@ -18,14 +17,15 @@ import {
    TRUST BAR — Big-number stats row (CoolFix "10 / 1,500+ / 4.9" style)
    ======================================================================== */
 export async function TrustBar() {
-  const SITE = await getSite();
+  const [SITE, sections] = await Promise.all([getSite(), getSections()]);
+  const tb = sections.trustBar;
   const items = [
     { icon: Star, value: `${SITE.rating}/5`, label: `${SITE.reviewCount}+ reviews` },
-    { icon: ShieldCheck, value: "Licensed", label: `& insured` },
-    { icon: Clock, value: "30 min", label: "Avg response" },
-    { icon: Award, value: "20+ yrs", label: "Serving LA" },
-    { icon: Truck, value: "Same-day", label: "Service" },
-    { icon: ThumbsUp, value: "100%", label: "Satisfaction" },
+    { icon: ShieldCheck, value: tb.items[0].value, label: tb.items[0].label },
+    { icon: Clock, value: tb.items[1].value, label: tb.items[1].label },
+    { icon: Award, value: tb.items[2].value, label: tb.items[2].label },
+    { icon: Truck, value: tb.items[3].value, label: tb.items[3].label },
+    { icon: ThumbsUp, value: tb.items[4].value, label: tb.items[4].label },
   ];
   return (
     <section className="border-y border-ink/5 bg-sky-50">
@@ -48,18 +48,20 @@ export async function TrustBar() {
    BIG STATS BAND — Display CoolFix-style headline numbers
    ======================================================================== */
 export async function StatsBand() {
-  const SITE = await getSite();
+  const [SITE, sections] = await Promise.all([getSite(), getSections()]);
+  const sb = sections.statsBand;
   const stats = [
-    { num: `${SITE.years}+`, label: "Years serving Los Angeles" },
-    { num: `${SITE.reviewCount}+`, label: "Five-star homeowner reviews" },
-    { num: `${SITE.rating}`, label: "Average service rating across Google & Yelp" },
+    { num: `${SITE.years}+`, label: sb.stats[0].label },
+    { num: `${SITE.reviewCount}+`, label: sb.stats[1].label },
+    { num: `${SITE.rating}`, label: sb.stats[2].label },
   ];
+  const [headingBefore, headingAfter] = sb.heading.split(sb.headingHighlight);
   return (
     <section className="bg-sky-50 py-20 sm:py-24">
       <div className="container-tight">
-        <SectionLabel className="mb-4">Our Advantages</SectionLabel>
+        <SectionLabel className="mb-4">{sb.sectionLabel}</SectionLabel>
         <h2 className="max-w-2xl text-balance">
-          Team for fast, <span className="text-primary-600">honest</span> water heater service.
+          {headingBefore}<span className="text-primary-600">{sb.headingHighlight}</span>{headingAfter}
         </h2>
         <div className="mt-12 grid gap-12 lg:grid-cols-3">
           {stats.map((s, i) => (
@@ -78,7 +80,8 @@ export async function StatsBand() {
    EMERGENCY SECTION — full dedicated 24/7 emergency block on solid red
    ======================================================================== */
 export async function EmergencySection() {
-  const SITE = await getSite();
+  const [SITE, sections] = await Promise.all([getSite(), getSections()]);
+  const es = sections.emergencySection;
   return (
     <section className="bg-emergency-600 py-20 text-white sm:py-24">
       <div className="container-tight">
@@ -86,13 +89,13 @@ export async function EmergencySection() {
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white ring-1 ring-white/25">
               <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
-              24/7 Emergency Service
+              {es.badge}
             </div>
             <h2 className="mt-5 text-balance text-white">
-              Water heater emergency? We're 30 minutes away.
+              {es.heading}
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
-              Tank leaking, flooding, no hot water in the dead of winter — we answer the phone 24/7, dispatch immediately, and most jobs are stopped/fixed within the same visit.
+              {es.paragraph}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -106,34 +109,29 @@ export async function EmergencySection() {
                 href="/emergency-water-heater-repair"
                 className="inline-flex h-14 items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-transparent px-8 text-base font-semibold text-white transition-colors hover:border-white hover:bg-white/10 sm:text-lg"
               >
-                Emergency Details <ArrowRight className="h-5 w-5" />
+                {es.emergencyCtaLabel} <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
 
             <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/25 pt-6">
               <div>
-                <div className="font-display text-3xl font-black text-white sm:text-4xl">30 min</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-white/75">Avg response</div>
+                <div className="font-display text-3xl font-black text-white sm:text-4xl">{es.stat1Value}</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-white/75">{es.stat1Label}</div>
               </div>
               <div>
-                <div className="font-display text-3xl font-black text-white sm:text-4xl">24/7</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-white/75">Real person</div>
+                <div className="font-display text-3xl font-black text-white sm:text-4xl">{es.stat2Value}</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-white/75">{es.stat2Label}</div>
               </div>
               <div>
-                <div className="font-display text-3xl font-black text-white sm:text-4xl">Same-day</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-white/75">Repair</div>
+                <div className="font-display text-3xl font-black text-white sm:text-4xl">{es.stat3Value}</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-white/75">{es.stat3Label}</div>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-5">
             <div className="space-y-3">
-              {[
-                { title: "Tank leaking or flooding", desc: "Emergency containment, water shut-off, replacement queued." },
-                { title: "No hot water at all", desc: "Pilot, thermocouple, gas valve — diagnosed within minutes." },
-                { title: "Pilot light won't stay lit", desc: "Most fixes done in 20–30 minutes on the first visit." },
-                { title: "Burst pipe near the heater", desc: "Same-day stop and full repair coordination." },
-              ].map((item, i) => (
+              {(es.scenarios as { title: string; desc: string }[]).map((item, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-3 rounded-2xl bg-white p-5 ring-1 ring-emergency-700/10 shadow-card"
@@ -159,19 +157,20 @@ export async function EmergencySection() {
    EMERGENCY STRIP — kept for urgency (red banner)
    ======================================================================== */
 export async function EmergencyStrip() {
-  const SITE = await getSite();
+  const [SITE, sections] = await Promise.all([getSite(), getSections()]);
+  const estrip = sections.emergencyStrip;
   return (
     <div className="bg-emergency-600 text-white">
       <div className="container-tight flex flex-col items-center justify-center gap-2 py-3 text-center text-sm font-semibold sm:flex-row sm:gap-4">
         <span className="flex items-center gap-2">
           <AlertTriangle className="h-4 w-4 animate-pulse" />
-          Plumbing emergency? We respond in 30 minutes.
+          {estrip.text}
         </span>
         <a
           href={SITE.phoneTel}
           className="rounded-full bg-white px-5 py-1.5 font-bold text-emergency-700 shadow-md transition-transform hover:scale-105"
         >
-          Call Now: {SITE.phoneDisplay}
+          {estrip.ctaLabel} {SITE.phoneDisplay}
         </a>
       </div>
     </div>
@@ -186,29 +185,27 @@ interface ProcessProps {
   title?: string;
   subtitle?: string;
 }
-const DEFAULT_STEPS = [
-  { step: "1", title: "Call or Book Online", desc: "Real person answers — no phone trees, no waiting." },
-  { step: "2", title: "Free On-Site Diagnosis", desc: "Licensed tech arrives within hours and diagnoses on the spot." },
-  { step: "3", title: "Upfront Written Quote", desc: "Clear price and scope before any work begins." },
-  { step: "4", title: "Same-Day Service", desc: "Most jobs completed in a single visit, fully warrantied." },
-];
 export async function Process({
-  steps = DEFAULT_STEPS,
-  title = "From Call to Hot Water in 4 Steps",
-  subtitle = "Getting your water heater fixed is easier than you think — just four simple steps and comfort returns.",
+  steps,
+  title,
+  subtitle,
 }: ProcessProps) {
-  const SITE = await getSite();
+  const [SITE, sections] = await Promise.all([getSite(), getSections()]);
+  const proc = sections.process;
+  const resolvedSteps = steps ?? proc.defaultSteps;
+  const resolvedTitle = title ?? proc.defaultTitle;
+  const resolvedSubtitle = subtitle ?? proc.defaultSubtitle;
   return (
     <section className="bg-sky-50 py-20 sm:py-24">
       <div className="container-tight">
-        <SectionLabel className="mb-4">How It Works</SectionLabel>
+        <SectionLabel className="mb-4">{proc.sectionLabel}</SectionLabel>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <h2 className="max-w-3xl text-balance lg:col-span-7">{title}</h2>
-          <p className="text-base leading-relaxed text-ink/70 sm:text-lg lg:col-span-5">{subtitle}</p>
+          <h2 className="max-w-3xl text-balance lg:col-span-7">{resolvedTitle}</h2>
+          <p className="text-base leading-relaxed text-ink/70 sm:text-lg lg:col-span-5">{resolvedSubtitle}</p>
         </div>
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((s, i) => {
+          {(resolvedSteps as { step: string; title: string; desc: string }[]).map((s, i) => {
             const num = String(i + 1).padStart(2, "0");
             const featured = i === 0;
             return (
@@ -251,7 +248,7 @@ export async function Process({
             <a href={SITE.phoneTel}><Phone className="h-4 w-4" /> Call {SITE.phoneDisplay}</a>
           </Button>
           <Button asChild size="lg" variant="default">
-            <Link href="/contact">Book an Installation</Link>
+            <Link href="/contact">{proc.ctaBookText}</Link>
           </Button>
         </div>
       </div>
@@ -365,23 +362,24 @@ export function WhatsIncluded({ items, title = "What's Included In Every Service
    WHY US — dark contrast section (CoolFix testimonials black band)
    ======================================================================== */
 export async function WhyUs({ items, title = "Why LA Homeowners Choose Us" }: { items: string[]; title?: string }) {
-  const SITE = await getSite();
+  const [SITE, sections] = await Promise.all([getSite(), getSections()]);
+  const wu = sections.whyUs;
   return (
     <section className="bg-ink-900 py-20 text-white sm:py-24">
       <div className="container-tight">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <SectionLabel className="mb-4 text-primary-300 [&::before]:bg-primary-400">Why Us</SectionLabel>
+            <SectionLabel className="mb-4 text-primary-300 [&::before]:bg-primary-400">{wu.sectionLabel}</SectionLabel>
             <h2 className="text-white">{title}</h2>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-white/70 sm:text-lg">
-              We're not the cheapest — we're the most reliable. {SITE.years}+ years, {SITE.reviewCount}+ five-star reviews, and a 100% satisfaction guarantee on every job.
+              {wu.paragraph} {SITE.years}+ years, {SITE.reviewCount}+ five-star reviews, and a 100% satisfaction guarantee on every job.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" variant="call">
                 <a href={SITE.phoneTel}><Phone className="h-4 w-4" /> Call {SITE.phoneDisplay}</a>
               </Button>
               <Button asChild size="lg" variant="default">
-                <Link href="/contact">Get Free Quote</Link>
+                <Link href="/contact">{wu.ctaBookText}</Link>
               </Button>
             </div>
           </div>
@@ -406,18 +404,19 @@ export async function WhyUs({ items, title = "Why LA Homeowners Choose Us" }: { 
    REVIEWS — "Look What Our Clients Say" testimonials grid
    ======================================================================== */
 export async function ReviewsSection({ limit = 6 }: { limit?: number }) {
-  const [SITE, reviews] = await Promise.all([getSite(), getReviews()]);
+  const [SITE, reviews, sections] = await Promise.all([getSite(), getReviews(), getSections()]);
+  const rv = sections.reviews;
   const items = reviews.slice(0, limit);
   return (
     <section className="bg-ink-900 py-20 text-white sm:py-24">
       <div className="container-tight">
-        <SectionLabel className="mb-4 text-primary-300 [&::before]:bg-primary-400">Testimonials</SectionLabel>
+        <SectionLabel className="mb-4 text-primary-300 [&::before]:bg-primary-400">{rv.sectionLabel}</SectionLabel>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <h2 className="max-w-3xl text-balance text-white lg:col-span-7">
-            Look What Our Clients Say
+            {rv.heading}
           </h2>
           <p className="text-base leading-relaxed text-white/70 sm:text-lg lg:col-span-5">
-            Fast response, honest pricing, and work done right the first time — that's what our clients appreciate most.
+            {rv.paragraph}
           </p>
         </div>
 
@@ -504,35 +503,38 @@ interface FinalCTAProps {
   subheadline?: string;
 }
 export async function FinalCTA({
-  headline = "Ready to fix your water heater?",
-  subheadline = "Same-day service, upfront pricing, and a 100% satisfaction guarantee. Call now or book online — we'll be there fast.",
+  headline,
+  subheadline,
 }: FinalCTAProps) {
-  const SITE = await getSite();
+  const [SITE, sections] = await Promise.all([getSite(), getSections()]);
+  const fc = sections.finalCta;
+  const resolvedHeadline = headline ?? fc.defaultHeadline;
+  const resolvedSubheadline = subheadline ?? fc.defaultSubheadline;
   return (
     <section className="relative overflow-hidden bg-sky-200 py-24 text-ink sm:py-28">
       <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/55 blur-3xl" />
       <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary-200/50 blur-3xl" />
       <div className="container-tight relative text-center">
-        <SectionLabel className="mx-auto mb-5 justify-center">Book Today</SectionLabel>
+        <SectionLabel className="mx-auto mb-5 justify-center">{fc.sectionLabel}</SectionLabel>
         <h2 className="mx-auto max-w-3xl text-balance">
-          {headline}
+          {resolvedHeadline}
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-ink/70 sm:text-lg">
-          {subheadline}
+          {resolvedSubheadline}
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button asChild size="xl" variant="call">
             <a href={SITE.phoneTel}><Phone className="h-5 w-5" /> Call {SITE.phoneDisplay}</a>
           </Button>
           <Button asChild size="xl" variant="default">
-            <Link href="/contact">Get Free Quote</Link>
+            <Link href="/contact">{fc.ctaBookText}</Link>
           </Button>
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-ink/55 sm:text-sm">
-          <span>✓ Free estimates</span>
-          <span>✓ Same-day service</span>
-          <span>✓ 24/7 emergency</span>
-          <span>✓ Licensed</span>
+          <span>{fc.badge1}</span>
+          <span>{fc.badge2}</span>
+          <span>{fc.badge3}</span>
+          <span>{fc.badge4}</span>
         </div>
       </div>
     </section>
@@ -543,15 +545,16 @@ export async function FinalCTA({
    AREAS WE SERVE — Compact location grid
    ======================================================================== */
 export async function ServiceAreasGrid() {
-  const [SITE, locations, additionalAreas] = await Promise.all([getSite(), getLocations(), getAdditionalAreas()]);
+  const [locations, additionalAreas, sections] = await Promise.all([getLocations(), getAdditionalAreas(), getSections()]);
+  const sa = sections.serviceAreas;
   return (
     <section className="bg-white py-20 sm:py-24">
       <div className="container-tight">
-        <SectionLabel className="mb-4">Service Areas</SectionLabel>
+        <SectionLabel className="mb-4">{sa.sectionLabel}</SectionLabel>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <h2 className="max-w-3xl text-balance lg:col-span-7">Serving All of Los Angeles</h2>
+          <h2 className="max-w-3xl text-balance lg:col-span-7">{sa.heading}</h2>
           <p className="text-base leading-relaxed text-ink/70 sm:text-lg lg:col-span-5">
-            30-minute average response across the city — we cover every major neighborhood.
+            {sa.paragraph}
           </p>
         </div>
 
@@ -577,7 +580,7 @@ export async function ServiceAreasGrid() {
         {/* Additional neighborhoods we serve (no dedicated pages) */}
         <div className="mt-10 rounded-3xl bg-sky-50 p-6 ring-1 ring-ink/5 sm:p-8">
           <div className="mb-4 text-xs font-bold uppercase tracking-wider text-ink/55">
-            Also serving
+            {sa.alsoServingLabel}
           </div>
           <ul className="flex flex-wrap gap-2">
             {additionalAreas.map(area => (

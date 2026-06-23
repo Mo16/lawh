@@ -1,0 +1,130 @@
+{
+  "trustBar": {
+    "items": [
+      {
+        "value": "Licensed",
+        "label": "& insured"
+      },
+      {
+        "value": "30 min",
+        "label": "Avg response"
+      },
+      {
+        "value": "20+ yrs",
+        "label": "Serving LA"
+      },
+      {
+        "value": "Same-day",
+        "label": "Service"
+      },
+      {
+        "value": "100%",
+        "label": "Satisfaction"
+      }
+    ]
+  },
+  "statsBand": {
+    "sectionLabel": "Our Advantages",
+    "heading": "Team for fast, honest water heater service.",
+    "headingHighlight": "honest",
+    "stats": [
+      {
+        "label": "Years serving Los Angeles"
+      },
+      {
+        "label": "Five-star homeowner reviews"
+      },
+      {
+        "label": "Average service rating across Google & Yelp"
+      }
+    ]
+  },
+  "emergencySection": {
+    "badge": "24/7 Emergency Service",
+    "heading": "Water heater emergency? We're 30 minutes away.",
+    "paragraph": "Tank leaking, flooding, no hot water in the dead of winter — we answer the phone 24/7, dispatch immediately, and most jobs are stopped/fixed within the same visit.",
+    "stat1Value": "30 min",
+    "stat1Label": "Avg response",
+    "stat2Value": "24/7",
+    "stat2Label": "Real person",
+    "stat3Value": "Same-day",
+    "stat3Label": "Repair",
+    "emergencyCtaLabel": "Emergency Details",
+    "scenarios": [
+      {
+        "title": "Tank leaking or flooding",
+        "desc": "Emergency containment, water shut-off, replacement queued."
+      },
+      {
+        "title": "No hot water at all",
+        "desc": "Pilot, thermocouple, gas valve — diagnosed within minutes."
+      },
+      {
+        "title": "Pilot light won't stay lit",
+        "desc": "Most fixes done in 20–30 minutes on the first visit."
+      },
+      {
+        "title": "Burst pipe near the heater",
+        "desc": "Same-day stop and full repair coordination."
+      }
+    ]
+  },
+  "emergencyStrip": {
+    "text": "Plumbing emergency? We respond in 30 minutes.",
+    "ctaLabel": "Call Now:"
+  },
+  "process": {
+    "sectionLabel": "How It Works",
+    "defaultTitle": "From Call to Hot Water in 4 Steps",
+    "defaultSubtitle": "Getting your water heater fixed is easier than you think — just four simple steps and comfort returns.",
+    "defaultSteps": [
+      {
+        "step": "1",
+        "title": "Call or Book Online",
+        "desc": "Real person answers — no phone trees, no waiting."
+      },
+      {
+        "step": "2",
+        "title": "Free On-Site Diagnosis",
+        "desc": "Licensed tech arrives within hours and diagnoses on the spot."
+      },
+      {
+        "step": "3",
+        "title": "Upfront Written Quote",
+        "desc": "Clear price and scope before any work begins."
+      },
+      {
+        "step": "4",
+        "title": "Same-Day Service",
+        "desc": "Most jobs completed in a single visit, fully warrantied."
+      }
+    ],
+    "ctaBookText": "Book an Installation"
+  },
+  "whyUs": {
+    "sectionLabel": "Why Us",
+    "paragraph": "We're not the cheapest — we're the most reliable.",
+    "ctaBookText": "Get Free Quote"
+  },
+  "reviews": {
+    "sectionLabel": "Testimonials",
+    "heading": "Look What Our Clients Say",
+    "paragraph": "Fast response, honest pricing, and work done right the first time — that's what our clients appreciate most."
+  },
+  "finalCta": {
+    "sectionLabel": "Book Today",
+    "defaultHeadline": "Ready to fix your water heater?",
+    "defaultSubheadline": "Same-day service, upfront pricing, and a 100% satisfaction guarantee. Call now or book online — we'll be there fast.",
+    "ctaBookText": "Get Free Quote",
+    "badge1": "✓ Free estimates",
+    "badge2": "✓ Same-day service",
+    "badge3": "✓ 24/7 emergency",
+    "badge4": "✓ Licensed"
+  },
+  "serviceAreas": {
+    "sectionLabel": "Service Areas",
+    "heading": "Serving All of Los Angeles",
+    "paragraph": "30-minute average response across the city — we cover every major neighborhood.",
+    "alsoServingLabel": "Also serving"
+  }
+}
