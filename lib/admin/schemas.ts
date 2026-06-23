@@ -250,6 +250,18 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/privacy": {
+    key: "pages/privacy",
+    title: "Privacy Page",
+    fields: [
+      { name: "title", label: "Page title", type: "text" },
+      { name: "lastUpdated", label: "Last updated text", type: "text" },
+      { name: "sections", label: "Sections", type: "repeatable", of: [
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "body", label: "Body", type: "textarea" },
+      ]},
+    ],
+  },
   "pages/contact": {
     key: "pages/contact",
     title: "Contact Page",
