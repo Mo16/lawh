@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "badge": "Available 24/7 — 30-Min Response",
+    "headline": "Same-Day Water Heater Service Across",
+    "highlight": "Los Angeles",
+    "subheadline": "LA's most trusted water heater specialists. Same-day install, repair, and replacement for tank and tankless. 819+ five-star reviews. Licensed, insured, and 24/7 emergency ready.",
+    "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1600&h=1000&fit=crop&q=80",
+    "imageAlt": "LA Water Heaters licensed plumber installing water heater",
+    "bullets": [
+      "Same-day installation",
+      "Up to $1,900 in rebates",
+      "30-minute response",
+      "Licensed"
+    ]
+  },
+  "servicesSection": {
+    "label": "Our Services",
+    "heading": "Everything Your Water Heater Could Ever Need",
+    "paragraph": "From quick repairs to full tankless conversions — we handle it all. Same-day, fully warrantied, with upfront pricing and no surprises.",
+    "ctaPrimaryText": "All Water Heater Services",
+    "ctaPrimaryHref": "/water-heater-services",
+    "ctaSecondaryText": "All Tankless Services",
+    "ctaSecondaryHref": "/tankless-water-heater-services",
+    "featuredSlugs": [
+      "water-heater-installation",
+      "water-heater-repair",
+      "tankless-water-heater-installation",
+      "tankless-water-heater-repair",
+      "water-heater-replacement",
+      "emergency-water-heater-repair"
+    ]
+  },
+  "problemsSection": {
+    "label": "Common Issues",
+    "heading": "Hot water problems?",
+    "headingHighlight": "We've fixed them all.",
+    "paragraph": "Whether it's a tank leak at midnight, a tankless throwing error codes, or a dead pilot light on a cold morning — we've seen it, diagnosed it, and fixed it thousands of times across LA.",
+    "issues": [
+      { "icon": "Flame", "title": "No hot water", "desc": "Pilot light, thermocouple, gas valve — diagnosed today." },
+      { "icon": "AlertTriangle", "title": "Tank leaking", "desc": "Emergency containment + same-day replacement." },
+      { "icon": "Zap", "title": "Tankless error codes", "desc": "All brands, all codes — fixed in one visit." },
+      { "icon": "RefreshCw", "title": "Old unit failing", "desc": "Same-day swap with new energy-efficient model." },
+      { "icon": "Settings", "title": "Pilot won't stay lit", "desc": "Most fixes done in 20-30 minutes." },
+      { "icon": "ShieldCheck", "title": "Need maintenance", "desc": "Annual service extends life by 5+ years." }
+    ]
+  },
+  "brandsSection": {
+    "label": "Brands We Service",
+    "heading": "Authorized Installer for Every Major Brand",
+    "paragraph": "Factory-authorized for the brands that matter — full warranty registration, OEM parts, certified technicians."
+  },
+  "rebateBanner": {
+    "label": "Tankless Rebates",
+    "heading": "Save up to",
+    "headingAmount": "$1,900",
+    "headingTail": "on your new tankless.",
+    "paragraph": "Stack SoCalGas, LADWP, and federal rebates with manufacturer instant savings. We handle every form — you keep the cash.",
+    "ctaPrimaryText": "See Your Rebates",
+    "bigNumber": "$1,900",
+    "bigNumberLabel": "In Combined Rebates",
+    "href": "/tankless-rebates"
+  },
+  "whyUsItems": [
+    "18+ years serving Los Angeles",
+    "Licensed",
+    "30-minute average emergency response",
+    "4.9/5 rating, 819+ reviews",
+    "Same-day install on most jobs",
+    "Up to $1,900 in tankless rebates",
+    "100% satisfaction guarantee",
+    "Easy monthly payments from $89/mo"
+  ]
+}
