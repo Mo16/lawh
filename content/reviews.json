@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Kevin R.",
+    "location": "Sherman Oaks",
+    "rating": 5,
+    "text": "Our 13 year old tankless died over New Years. Contacted LA Water Heaters and they were out early the next day to put in a new and improved one. Very knowledgeable, courteous, professional and fast. Can't recommend more highly.",
+    "service": "Tankless Replacement",
+    "date": "via Yelp"
+  },
+  {
+    "name": "Ellis H.",
+    "location": "Studio City",
+    "rating": 5,
+    "text": "Our water heater broke, and the LA Water Heaters team was out two days later installing a new one for us! We are so grateful for their knowledge and expertise as they helped us choose the right solution.",
+    "service": "Water Heater Installation",
+    "date": "via Yelp"
+  },
+  {
+    "name": "Diana T.",
+    "location": "Burbank",
+    "rating": 5,
+    "text": "Our water heater went out and when I inquired on Yelp they were very responsive. They reached out, gave me a quote and had the new unit installed the next day. They even hauled away the old unit and the housing it was in.",
+    "service": "Water Heater Replacement",
+    "date": "via Yelp"
+  },
+  {
+    "name": "O. Laos",
+    "location": "Glendale",
+    "rating": 5,
+    "text": "LA Water Heaters did a fantastic job installing a new Rheem water heater. Proficient, efficient, and comprehensive from start to finish. I'd use them again without hesitation.",
+    "service": "Water Heater Installation",
+    "date": "via Yelp"
+  },
+  {
+    "name": "Letitia L.",
+    "location": "Pasadena",
+    "rating": 5,
+    "text": "LA Water Heaters may be my new favourite plumber! Their crew came on time and installed the water heater quickly and cleanly. Fair price and great communication throughout.",
+    "service": "Water Heater Replacement",
+    "date": "via Yelp"
+  },
+  {
+    "name": "Tomaso K.",
+    "location": "Santa Monica",
+    "rating": 5,
+    "text": "LA Water Heaters were super helpful and the response was really fast. They showed up on time, the price was very reasonable, and the work was done right. Highly recommend.",
+    "service": "Water Heater Repair",
+    "date": "via Yelp"
+  }
+]
