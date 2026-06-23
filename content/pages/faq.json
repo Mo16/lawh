@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "badge": "FAQ",
+    "headline": "Water Heater",
+    "highlight": "Questions Answered",
+    "subheadline": "Everything you've ever wondered about water heaters — answered by LA's most-trusted specialists. If you don't see your question, just call us.",
+    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&h=1000&fit=crop&q=80",
+    "imageAlt": "Water heater frequently asked questions"
+  },
+  "stillHaveQuestions": {
+    "heading": "Still have questions?",
+    "paragraph": "Call us directly. A real person — not an automated system — will answer."
+  }
+}

@@ -232,6 +232,24 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/faq": {
+    key: "pages/faq",
+    title: "FAQ Page",
+    fields: [
+      { name: "hero", label: "Hero", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "headline", label: "Headline", type: "text" },
+        { name: "highlight", label: "Highlight (coloured word)", type: "text" },
+        { name: "subheadline", label: "Subheadline", type: "textarea" },
+        { name: "image", label: "Hero image", type: "image" },
+        { name: "imageAlt", label: "Image alt text", type: "text" },
+      ]},
+      { name: "stillHaveQuestions", label: "Still Have Questions Section", type: "group", of: [
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+      ]},
+    ],
+  },
   "pages/contact": {
     key: "pages/contact",
     title: "Contact Page",

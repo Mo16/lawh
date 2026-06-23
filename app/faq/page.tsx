@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Phone } from "lucide-react";
-import { getSite, getFaqs } from "@/lib/content";
+import { getSite, getFaqs, getPage } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, FinalCTA } from "@/components/sections/blocks";
 import { Badge } from "@/components/ui/badge";
@@ -27,7 +27,7 @@ const SECTIONS = [
 ];
 
 export default async function FaqPage() {
-  const [SITE, FAQS] = await Promise.all([getSite(), getFaqs()]);
+  const [SITE, FAQS, faq] = await Promise.all([getSite(), getFaqs(), getPage("faq")]);
 
   // FAQ schema for SEO
   const allFaqs = SECTIONS.flatMap(s => FAQS[s.key]);
@@ -49,12 +49,12 @@ export default async function FaqPage() {
       />
 
       <Hero
-        badge="FAQ"
-        headline="Water Heater"
-        highlight="Questions Answered"
-        subheadline="Everything you've ever wondered about water heaters — answered by LA's most-trusted specialists. If you don't see your question, just call us."
-        image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&h=1000&fit=crop&q=80"
-        imageAlt="Water heater frequently asked questions"
+        badge={faq.hero.badge}
+        headline={faq.hero.headline}
+        highlight={faq.hero.highlight}
+        subheadline={faq.hero.subheadline}
+        image={faq.hero.image}
+        imageAlt={faq.hero.imageAlt}
         bullets={[`${allFaqs.length}+ answered questions`, "All categories", "Updated regularly", "Real expert answers"]}
       />
 
@@ -83,9 +83,9 @@ export default async function FaqPage() {
           </div>
 
           <div className="mt-14 rounded-2xl bg-primary-50 p-8 text-center">
-            <h2 className="text-2xl">Still have questions?</h2>
+            <h2 className="text-2xl">{faq.stillHaveQuestions.heading}</h2>
             <p className="mx-auto mt-3 max-w-md text-base text-muted-foreground">
-              Call us directly. A real person — not an automated system — will answer.
+              {faq.stillHaveQuestions.paragraph}
             </p>
             <Button asChild size="xl" variant="call" className="mt-6">
               <a href={SITE.phoneTel}>
