@@ -375,6 +375,20 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/residential": {
+    key: "pages/residential",
+    title: "Residential Page",
+    fields: [
+      { name: "meta", label: "SEO / Meta", type: "group", of: [
+        { name: "title", label: "Page title", type: "text" },
+        { name: "description", label: "Meta description", type: "textarea" },
+        { name: "canonical", label: "Canonical URL", type: "text" },
+        { name: "ogTitle", label: "OG title", type: "text" },
+        { name: "ogDescription", label: "OG description", type: "textarea" },
+        { name: "ogUrl", label: "OG URL", type: "text" },
+      ]},
+    ],
+  },
   "pages/service-areas": {
     key: "pages/service-areas",
     title: "Service Areas Page",
