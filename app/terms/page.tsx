@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getSite } from "@/lib/content";
+import { getSite, getPage } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const SITE = await getSite();
@@ -11,31 +11,21 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function TermsPage() {
-  const SITE = await getSite();
+  const terms = await getPage("terms");
 
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="container-narrow">
-        <h1 className="mb-2">Terms of Service</h1>
-        <p className="text-sm text-muted-foreground">Last updated: January 2026</p>
+        <h1 className="mb-2">{terms.title}</h1>
+        <p className="text-sm text-muted-foreground">Last updated: {terms.lastUpdated}</p>
 
         <div className="prose mt-8 max-w-none space-y-6 text-base leading-relaxed text-muted-foreground">
-          <div>
-            <h2 className="mb-3 text-xl">Service Agreement</h2>
-            <p>By engaging {SITE.name} for services, you agree to these terms. All work performed is covered by our written estimate and our 100% satisfaction guarantee.</p>
-          </div>
-          <div>
-            <h2 className="mb-3 text-xl">Warranty</h2>
-            <p>All installation work carries a 5-year labor warranty. Manufacturer warranty terms apply to all parts and equipment. See your specific written estimate for full warranty terms.</p>
-          </div>
-          <div>
-            <h2 className="mb-3 text-xl">Cancellation</h2>
-            <p>Appointments may be rescheduled with 24-hour notice. Same-day cancellations of confirmed appointments may incur a service fee.</p>
-          </div>
-          <div>
-            <h2 className="mb-3 text-xl">License</h2>
-            <p>{SITE.name} is licensed and insured.</p>
-          </div>
+          {terms.sections.map((section: { heading: string; body: string }, i: number) => (
+            <div key={i}>
+              <h2 className="mb-3 text-xl">{section.heading}</h2>
+              <p>{section.body}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
