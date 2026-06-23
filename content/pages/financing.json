@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "badge": "Financing Available",
+    "headline": "Easy Monthly Payments for Your",
+    "highlight": "New Water Heater",
+    "subheadline": "From as low as $89/mo. Apply in 60 seconds with no impact to your credit. Get your water heater fixed today, pay over time.",
+    "image": "https://images.unsplash.com/photo-1554224155-cfa08c2a758f?w=1600&h=1000&fit=crop&q=80",
+    "imageAlt": "Water heater financing options",
+    "bullets": [
+      "From $89/mo",
+      "60-second application",
+      "Soft credit pull only",
+      "Up to 60-month terms"
+    ]
+  },
+  "planHighlightsSection": {
+    "label": "Our Financing",
+    "heading": "Simple Financing, Honest Terms",
+    "paragraph": "We've made financing as simple as possible. Apply, get approved, get hot water — all in the same day.",
+    "plans": [
+      {
+        "title": "Low monthly payments",
+        "desc": "Spread the cost over 24–60 months with competitive rates that fit your budget."
+      },
+      {
+        "title": "Instant approval",
+        "desc": "Apply in 60 seconds. Soft credit pull. Instant decision — get hot water today."
+      },
+      {
+        "title": "No prepayment penalty",
+        "desc": "Pay off early any time. Save on interest with no extra fees."
+      },
+      {
+        "title": "Flexible terms",
+        "desc": "Terms tailored to your situation — short or long-term, we make it work."
+      }
+    ]
+  },
+  "howItWorksSection": {
+    "label": "How It Works",
+    "heading": "Get Approved in 60 Seconds",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Apply Online",
+        "desc": "60 seconds. Basic info, no credit impact."
+      },
+      {
+        "step": "2",
+        "title": "Get Approved",
+        "desc": "Instant decision. See your monthly payment."
+      },
+      {
+        "step": "3",
+        "title": "Sign Electronically",
+        "desc": "E-sign your agreement. No paperwork."
+      },
+      {
+        "step": "4",
+        "title": "Get Hot Water",
+        "desc": "We schedule install. Same day if needed."
+      }
+    ]
+  },
+  "exampleSection": {
+    "label": "Example Payment",
+    "installTitle": "$2,495 install",
+    "installDesc": "Standard 50-gallon gas water heater installed.",
+    "termLabel": "Pay over 36 months",
+    "monthlyAmount": "$89/mo",
+    "monthlyNote": "Low monthly payment · subject to credit approval",
+    "ctaText": "Apply Now",
+    "ctaHref": "/contact",
+    "disclaimer": "Example only. Actual terms based on credit approval. Subject to lender requirements."
+  },
+  "financeableSection": {
+    "label": "What You Can Finance",
+    "heading": "Finance Any Water Heater Service",
+    "items": [
+      "Tank water heater installation",
+      "Tankless water heater installation",
+      "Tank-to-tankless conversion",
+      "Water heater replacement",
+      "Major repair work",
+      "Annual maintenance plans"
+    ]
+  },
+  "faqsSection": {
+    "title": "Financing FAQs",
+    "faqs": [
+      {
+        "q": "What financing options do you offer?",
+        "a": "We offer flexible monthly payment plans on qualifying water heater installations and replacements, with terms up to 60 months at competitive rates. We work with multiple lending partners to find the best fit for your budget."
+      },
+      {
+        "q": "How does the application work?",
+        "a": "Apply online in 60 seconds. We do a soft credit pull (no impact to your score) and you get an instant decision. If approved, you can sign electronically and we schedule your install."
+      },
+      {
+        "q": "Will applying affect my credit score?",
+        "a": "No. Pre-approval is a soft credit pull that does not impact your credit score. Only when you accept and sign the loan agreement does a hard inquiry appear."
+      },
+      {
+        "q": "What's the minimum amount I can finance?",
+        "a": "Financing is typically available for jobs $1,000 and up. For smaller repairs, we accept all major credit cards."
+      },
+      {
+        "q": "Are there prepayment penalties?",
+        "a": "No. You can pay off your loan early at any time without penalty — actually saving on interest."
+      },
+      {
+        "q": "What if my credit isn't perfect?",
+        "a": "We work with multiple lenders covering a wide range of credit profiles. Even if your credit isn't perfect, we likely have an option for you. Call us — we'll find the right fit."
+      }
+    ]
+  },
+  "finalCTA": {
+    "headline": "Ready to apply?",
+    "subheadline": "60 seconds, no credit impact, instant decision. Or call us — we'll help you over the phone."
+  }
+}

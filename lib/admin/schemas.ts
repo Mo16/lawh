@@ -172,6 +172,66 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/financing": {
+    key: "pages/financing",
+    title: "Financing Page",
+    fields: [
+      { name: "hero", label: "Hero", type: "group", of: [
+        { name: "badge", label: "Badge", type: "text" },
+        { name: "headline", label: "Headline", type: "text" },
+        { name: "highlight", label: "Highlight (coloured word)", type: "text" },
+        { name: "subheadline", label: "Subheadline", type: "textarea" },
+        { name: "image", label: "Hero image", type: "image" },
+        { name: "imageAlt", label: "Image alt text", type: "text" },
+        { name: "bullets", label: "Bullet points", type: "list" },
+      ]},
+      { name: "planHighlightsSection", label: "Plan Highlights Section", type: "group", of: [
+        { name: "label", label: "Section label", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "paragraph", label: "Paragraph", type: "textarea" },
+        { name: "plans", label: "Plan cards", type: "repeatable", of: [
+          { name: "title", label: "Title", type: "text" },
+          { name: "desc", label: "Description", type: "textarea" },
+        ]},
+      ]},
+      { name: "howItWorksSection", label: "How It Works Section", type: "group", of: [
+        { name: "label", label: "Section label", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "steps", label: "Steps", type: "repeatable", of: [
+          { name: "step", label: "Step number", type: "text" },
+          { name: "title", label: "Title", type: "text" },
+          { name: "desc", label: "Description", type: "textarea" },
+        ]},
+      ]},
+      { name: "exampleSection", label: "Example Calculation Section", type: "group", of: [
+        { name: "label", label: "Section label", type: "text" },
+        { name: "installTitle", label: "Install title", type: "text" },
+        { name: "installDesc", label: "Install description", type: "text" },
+        { name: "termLabel", label: "Term label", type: "text" },
+        { name: "monthlyAmount", label: "Monthly amount", type: "text" },
+        { name: "monthlyNote", label: "Monthly note", type: "text" },
+        { name: "ctaText", label: "CTA button text", type: "text" },
+        { name: "ctaHref", label: "CTA button link", type: "text" },
+        { name: "disclaimer", label: "Disclaimer text", type: "textarea" },
+      ]},
+      { name: "financeableSection", label: "What You Can Finance Section", type: "group", of: [
+        { name: "label", label: "Section label", type: "text" },
+        { name: "heading", label: "Heading", type: "text" },
+        { name: "items", label: "Financeable items", type: "list" },
+      ]},
+      { name: "faqsSection", label: "FAQs Section", type: "group", of: [
+        { name: "title", label: "Section title", type: "text" },
+        { name: "faqs", label: "FAQs", type: "repeatable", of: [
+          { name: "q", label: "Question", type: "text" },
+          { name: "a", label: "Answer", type: "textarea" },
+        ]},
+      ]},
+      { name: "finalCTA", label: "Final CTA", type: "group", of: [
+        { name: "headline", label: "Headline", type: "text" },
+        { name: "subheadline", label: "Subheadline", type: "textarea" },
+      ]},
+    ],
+  },
   "pages/contact": {
     key: "pages/contact",
     title: "Contact Page",
