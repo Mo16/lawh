@@ -389,6 +389,23 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  "pages/tankless-services": {
+    key: "pages/tankless-services",
+    title: "Tankless Services Page",
+    fields: [
+      { name: "meta", label: "SEO / Meta", type: "group", of: [
+        { name: "title", label: "Page title", type: "text" },
+        { name: "description", label: "Meta description", type: "textarea" },
+        { name: "canonical", label: "Canonical URL", type: "text" },
+        { name: "keywords", label: "Keywords", type: "list" },
+        { name: "ogTitle", label: "OG title", type: "text" },
+        { name: "ogDescription", label: "OG description", type: "textarea" },
+        { name: "ogUrl", label: "OG URL", type: "text" },
+        { name: "twitterTitle", label: "Twitter title", type: "text" },
+        { name: "twitterDescription", label: "Twitter description", type: "textarea" },
+      ]},
+    ],
+  },
   "pages/service-areas": {
     key: "pages/service-areas",
     title: "Service Areas Page",
