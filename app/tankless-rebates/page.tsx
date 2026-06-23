@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   Phone, ArrowRight, CheckCircle2, FileText, DollarSign, Zap, Award, Shield,
 } from "lucide-react";
-import { getSite, getFaqs } from "@/lib/content";
+import { getSite } from "@/lib/content";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar, FAQSection, FinalCTA, ReviewsSection } from "@/components/sections/blocks";
 import { Button } from "@/components/ui/button";
