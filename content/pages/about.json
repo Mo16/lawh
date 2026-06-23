@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "badge": "About Us",
+    "headline": "LA's Trusted",
+    "highlight": "Water Heater Experts",
+    "subheadline": "Since 2008, we've installed and serviced thousands of water heaters across Los Angeles. Family-owned, locally operated, and obsessed with doing right by our customers.",
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&h=1000&fit=crop&q=80",
+    "imageAlt": "LA Water Heaters team",
+    "bullets": [
+      "Family-owned since 2008",
+      "819+ five-star reviews",
+      "Licensed",
+      "100% satisfaction guarantee"
+    ]
+  },
+  "storySection": {
+    "badge": "Our Story",
+    "image": "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1200&h=1500&fit=crop&q=80",
+    "imageAlt": "LA Water Heaters technician servicing a water heater",
+    "paragraph1": "LA Water Heaters started in 2008 with a simple goal: be the water heater company we'd want to call ourselves. No phone trees, no upsells, no surprise charges — just licensed plumbers showing up on time and fixing what's broken.",
+    "paragraph2": "Over the years, we've grown from a one-truck operation in Studio City to a fully-staffed team serving every neighborhood in Los Angeles. We've installed every brand from Rheem to Navien, fixed every issue from dead pilot lights to flooded basements, and built relationships with thousands of LA homeowners along the way.",
+    "paragraph3": "What hasn't changed: we still answer the phone ourselves, we still give written quotes before we touch anything, and we still guarantee every job 100%. That's why 819+ Angelenos have left us five-star reviews — and why they keep calling us back."
+  },
+  "teamSection": {
+    "badge": "Our Team",
+    "paragraph": "Licensed plumbers, master technicians, and the friendly office team that picks up when you call.",
+    "founder": {
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&h=1100&fit=crop&q=80",
+      "imageAlt": "Zohrab Grigoriyan, founder of LA Water Heaters",
+      "badge": "Founder & Master Plumber",
+      "name": "Zohrab Grigoriyan",
+      "credentialIcon": "ShieldCheck",
+      "credential1": "Licensed",
+      "credential2": "20+ years in the trade",
+      "paragraph1": "Zohrab founded LA Water Heaters in 2008 after two decades fixing water heaters across Los Angeles. He still runs every install crew through the same playbook he used on day one: show up on time, give an honest quote, and don't leave until it's right.",
+      "paragraph2": "When he's not on a job site, Zohrab is training new techs, picking up the phone himself, or testing the latest tankless units in his own shop. He answers every escalation personally — that's the LA Water Heaters guarantee."
+    },
+    "crew": [
+      {
+        "icon": "Wrench",
+        "role": "Installation Crew",
+        "bio": "Licensed install techs trained on Zohrab's playbook — tank, tankless, and high-efficiency systems from Rheem and A.O. Smith to Navien and Rinnai."
+      },
+      {
+        "icon": "Zap",
+        "role": "Service & Repair",
+        "bio": "Fast, honest diagnostics on error codes, pilot issues, leaks, and emergency calls. We find what others miss and fix it right the first time."
+      },
+      {
+        "icon": "Users",
+        "role": "Customer Care",
+        "bio": "A real person answers when you call — no phone trees. We schedule every job, keep you updated, and keep the trucks moving across LA."
+      }
+    ]
+  },
+  "statsSection": {
+    "stat4Value": "30 min",
+    "stat4Label": "Avg response time"
+  },
+  "valuesSection": {
+    "badge": "Our Values",
+    "heading": "What Sets Us Apart",
+    "values": [
+      {
+        "icon": "ShieldCheck",
+        "title": "Licensed & Insured",
+        "desc": "Fully licensed, bonded, and insured for your protection."
+      },
+      {
+        "icon": "Clock",
+        "title": "Always On Time",
+        "desc": "We respect your schedule. 30-minute average response, same-day service on most jobs."
+      },
+      {
+        "icon": "Users",
+        "title": "Real People, Real Service",
+        "desc": "When you call, a real person answers. No phone trees, no automated runaround."
+      },
+      {
+        "icon": "Award",
+        "title": "100% Satisfaction Guarantee",
+        "desc": "If you're not 100% satisfied with our work, we make it right — guaranteed."
+      }
+    ]
+  },
+  "certificationsSection": {
+    "badge": "Certifications",
+    "heading": "Licensed, Bonded, and Trusted",
+    "cert1Icon": "ShieldCheck",
+    "cert1Title": "Licensed",
+    "cert1Sub": "Bonded & insured",
+    "cert2Icon": "Award",
+    "cert2Sub": "Better Business Bureau",
+    "cert3Icon": "Star"
+  },
+  "finalCTA": {
+    "headline": "Ready to work with LA's trusted water heater team?",
+    "subheadline": "Free estimates, upfront pricing, same-day service. Call now or get a quote online."
+  }
+}
