@@ -1,12 +1,12 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-const ALLOWED = new Set(["image/png", "image/jpeg", "image/jpg", "image/webp", "image/gif", "image/svg+xml"]);
+const ALLOWED = new Set(["image/png", "image/jpeg", "image/jpg", "image/webp", "image/gif"]);
 const MAX_BYTES = 8 * 1024 * 1024;
 
 function safeName(name: string): string {
   const base = name.replace(/[^a-zA-Z0-9._-]/g, "-").replace(/-+/g, "-").slice(-60);
-  const rand = Math.random().toString(36).slice(2, 8);
+  const rand = crypto.randomUUID().slice(0, 8);
   const dot = base.lastIndexOf(".");
   const stem = dot > 0 ? base.slice(0, dot) : base;
   const ext = dot > 0 ? base.slice(dot) : "";
