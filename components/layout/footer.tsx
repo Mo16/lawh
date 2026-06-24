@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, ShieldCheck, Star, Facebook } from "lucide-react";
-import { getSite, getLocations } from "@/lib/content";
+import { getSite, getLocations, getLayout } from "@/lib/content";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 
 export async function Footer() {
-  const [SITE, locations] = await Promise.all([getSite(), getLocations()]);
+  const [SITE, locations, layout] = await Promise.all([getSite(), getLocations(), getLayout()]);
   const year = new Date().getFullYear();
+  const footer = layout.footer;
   return (
     <footer>
       {/* Final CTA banner */}
-   
+
 
       {/* Footer links grid */}
       <div className="bg-ink-900 text-white/70">
@@ -20,7 +21,7 @@ export async function Footer() {
             <div className="lg:col-span-4">
               <Logo variant="light" />
               <p className="mt-5 text-sm leading-relaxed">
-                LA's trusted water heater specialists since 2008. Tank, tankless, all major brands. Licensed, insured, and 24/7 emergency ready across Los Angeles County.
+                {footer.blurb}
               </p>
               <div className="mt-6 space-y-2.5 text-sm">
                 <a href={SITE.phoneTel} className="flex items-center gap-3 text-white">
@@ -40,27 +41,23 @@ export async function Footer() {
 
             {/* Tank services */}
             <div className="lg:col-span-2">
-              <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-white">Water Heaters</h4>
+              <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-white">{footer.columns[0].heading}</h4>
               <ul className="space-y-2.5 text-sm">
-                <li><Link href="/water-heater-services">All Services</Link></li>
-                <li><Link href="/water-heater-installation">Installation</Link></li>
-                <li><Link href="/water-heater-repair">Repair</Link></li>
-                <li><Link href="/water-heater-replacement">Replacement</Link></li>
-                <li><Link href="/water-heater-maintenance">Maintenance</Link></li>
-                <li><Link href="/emergency-water-heater-repair">24/7 Emergency</Link></li>
+                {footer.columns[0].links.map((link: { label: string; href: string; highlight?: boolean }) => (
+                  <li key={link.href}><Link href={link.href}>{link.label}</Link></li>
+                ))}
               </ul>
             </div>
 
             {/* Tankless */}
             <div className="lg:col-span-2">
-              <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-white">Tankless</h4>
+              <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-white">{footer.columns[1].heading}</h4>
               <ul className="space-y-2.5 text-sm">
-                <li><Link href="/tankless-water-heater-services">All Tankless</Link></li>
-                <li><Link href="/tankless-water-heater-installation">Installation</Link></li>
-                <li><Link href="/tankless-water-heater-repair">Repair</Link></li>
-                <li><Link href="/tankless-water-heater-replacement">Replacement</Link></li>
-                <li><Link href="/tankless-water-heater-maintenance">Annual Descaling</Link></li>
-                <li><Link href="/tankless-rebates" className="font-semibold text-cta-400">$1,900 Rebates →</Link></li>
+                {footer.columns[1].links.map((link: { label: string; href: string; highlight?: boolean }) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className={link.highlight ? "font-semibold text-cta-400" : undefined}>{link.label}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -76,14 +73,11 @@ export async function Footer() {
 
             {/* Company */}
             <div className="lg:col-span-2">
-              <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-white">Company</h4>
+              <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-white">{footer.columns[2].heading}</h4>
               <ul className="space-y-2.5 text-sm">
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/financing">Financing</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/faq">FAQ</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-                <li><Link href="/service-areas">All Areas</Link></li>
+                {footer.columns[2].links.map((link: { label: string; href: string; highlight?: boolean }) => (
+                  <li key={link.href}><Link href={link.href}>{link.label}</Link></li>
+                ))}
               </ul>
             </div>
           </div>
@@ -93,12 +87,12 @@ export async function Footer() {
         <div className="border-t border-white/10">
           <div className="container-tight flex flex-col gap-3 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              © {year} {SITE.name}. All rights reserved. Licensed & insured.
+              © {year} {SITE.name}. {footer.legal}
             </div>
             <div className="flex gap-4">
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/terms">Terms of Service</Link>
-              <Link href="/sitemap.xml">Sitemap</Link>
+              {footer.legalLinks.map((link: { label: string; href: string }) => (
+                <Link key={link.href} href={link.href}>{link.label}</Link>
+              ))}
             </div>
           </div>
         </div>

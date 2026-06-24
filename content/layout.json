@@ -1,0 +1,217 @@
+{
+  "nav": [
+    {
+      "label": "Water Heaters",
+      "href": "/water-heater-services",
+      "children": [
+        {
+          "label": "Installation",
+          "href": "/water-heater-installation",
+          "desc": "Same-day new install"
+        },
+        {
+          "label": "Repair",
+          "href": "/water-heater-repair",
+          "desc": "Diagnosed and fixed today"
+        },
+        {
+          "label": "Replacement",
+          "href": "/water-heater-replacement",
+          "desc": "Old out, new in, same day"
+        },
+        {
+          "label": "Maintenance",
+          "href": "/water-heater-maintenance",
+          "desc": "Annual flush and inspection"
+        },
+        {
+          "label": "24/7 Emergency Repair",
+          "href": "/emergency-water-heater-repair",
+          "desc": "30-min response, 24/7"
+        }
+      ]
+    },
+    {
+      "label": "Tankless Water Heaters",
+      "href": "/tankless-water-heater-services",
+      "children": [
+        {
+          "label": "Tankless Installation",
+          "href": "/tankless-water-heater-installation",
+          "desc": "Up to $1,900 in rebates"
+        },
+        {
+          "label": "Tankless Rebates",
+          "href": "/tankless-rebates",
+          "desc": "Save up to $1,900 — paperwork handled"
+        },
+        {
+          "label": "Tankless Repair",
+          "href": "/tankless-water-heater-repair",
+          "desc": "All brands, all error codes"
+        },
+        {
+          "label": "Tankless Replacement",
+          "href": "/tankless-water-heater-replacement",
+          "desc": "Same-day swap"
+        },
+        {
+          "label": "Annual Descaling",
+          "href": "/tankless-water-heater-maintenance",
+          "desc": "Required for warranty"
+        }
+      ]
+    },
+    {
+      "label": "Areas",
+      "href": "/service-areas",
+      "children": [
+        {
+          "label": "Hollywood",
+          "href": "/water-heater-services-hollywood"
+        },
+        {
+          "label": "Beverly Hills",
+          "href": "/water-heater-services-beverly-hills"
+        },
+        {
+          "label": "Santa Monica",
+          "href": "/water-heater-services-santa-monica"
+        },
+        {
+          "label": "Pasadena",
+          "href": "/water-heater-services-pasadena"
+        },
+        {
+          "label": "Burbank",
+          "href": "/water-heater-services-burbank"
+        },
+        {
+          "label": "Glendale",
+          "href": "/water-heater-services-glendale"
+        }
+      ]
+    },
+    {
+      "label": "Financing",
+      "href": "/financing"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "FAQ",
+      "href": "/faq"
+    }
+  ],
+  "headerCta": "Get a Free Quote",
+  "footer": {
+    "blurb": "LA's trusted water heater specialists since 2008. Tank, tankless, all major brands. Licensed, insured, and 24/7 emergency ready across Los Angeles County.",
+    "columns": [
+      {
+        "heading": "Water Heaters",
+        "links": [
+          {
+            "label": "All Services",
+            "href": "/water-heater-services"
+          },
+          {
+            "label": "Installation",
+            "href": "/water-heater-installation"
+          },
+          {
+            "label": "Repair",
+            "href": "/water-heater-repair"
+          },
+          {
+            "label": "Replacement",
+            "href": "/water-heater-replacement"
+          },
+          {
+            "label": "Maintenance",
+            "href": "/water-heater-maintenance"
+          },
+          {
+            "label": "24/7 Emergency",
+            "href": "/emergency-water-heater-repair"
+          }
+        ]
+      },
+      {
+        "heading": "Tankless",
+        "links": [
+          {
+            "label": "All Tankless",
+            "href": "/tankless-water-heater-services"
+          },
+          {
+            "label": "Installation",
+            "href": "/tankless-water-heater-installation"
+          },
+          {
+            "label": "Repair",
+            "href": "/tankless-water-heater-repair"
+          },
+          {
+            "label": "Replacement",
+            "href": "/tankless-water-heater-replacement"
+          },
+          {
+            "label": "Annual Descaling",
+            "href": "/tankless-water-heater-maintenance"
+          },
+          {
+            "label": "$1,900 Rebates →",
+            "href": "/tankless-rebates",
+            "highlight": true
+          }
+        ]
+      },
+      {
+        "heading": "Company",
+        "links": [
+          {
+            "label": "About Us",
+            "href": "/about"
+          },
+          {
+            "label": "Financing",
+            "href": "/financing"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          },
+          {
+            "label": "All Areas",
+            "href": "/service-areas"
+          }
+        ]
+      }
+    ],
+    "legal": "All rights reserved. Licensed & insured.",
+    "legalLinks": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Terms of Service",
+        "href": "/terms"
+      },
+      {
+        "label": "Sitemap",
+        "href": "/sitemap.xml"
+      }
+    ]
+  }
+}

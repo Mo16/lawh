@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans, Russo_One } from "next/font/google";
-import { getSite } from "@/lib/content";
+import { getSite, getLayout } from "@/lib/content";
 import { Header, StickyMobileCTA } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
@@ -97,7 +97,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const site = await getSite();
+  const [site, layout] = await Promise.all([getSite(), getLayout()]);
 
   // Plumber-level JSON-LD schema for entire site
   const plumberSchema = {
@@ -155,7 +155,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <Header site={site} />
+        <Header site={site} nav={layout.nav} cta={layout.headerCta} />
         <main className="pb-20 lg:pb-0">{children}</main>
         <Footer />
         <StickyMobileCTA site={site} />

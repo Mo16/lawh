@@ -11,47 +11,7 @@ import { Button } from "@/components/ui/button";
 interface NavChild { label: string; href: string; desc?: string; }
 interface NavItem { label: string; href: string; children?: NavChild[]; }
 
-const NAV: NavItem[] = [
-  {
-    label: "Water Heaters",
-    href: "/water-heater-services",
-    children: [
-      { label: "Installation", href: "/water-heater-installation", desc: "Same-day new install" },
-      { label: "Repair", href: "/water-heater-repair", desc: "Diagnosed and fixed today" },
-      { label: "Replacement", href: "/water-heater-replacement", desc: "Old out, new in, same day" },
-      { label: "Maintenance", href: "/water-heater-maintenance", desc: "Annual flush and inspection" },
-      { label: "24/7 Emergency Repair", href: "/emergency-water-heater-repair", desc: "30-min response, 24/7" },
-    ],
-  },
-  {
-    label: "Tankless Water Heaters",
-    href: "/tankless-water-heater-services",
-    children: [
-      { label: "Tankless Installation", href: "/tankless-water-heater-installation", desc: "Up to $1,900 in rebates" },
-      { label: "Tankless Rebates", href: "/tankless-rebates", desc: "Save up to $1,900 — paperwork handled" },
-      { label: "Tankless Repair", href: "/tankless-water-heater-repair", desc: "All brands, all error codes" },
-      { label: "Tankless Replacement", href: "/tankless-water-heater-replacement", desc: "Same-day swap" },
-      { label: "Annual Descaling", href: "/tankless-water-heater-maintenance", desc: "Required for warranty" },
-    ],
-  },
-  {
-    label: "Areas",
-    href: "/service-areas",
-    children: [
-      { label: "Hollywood", href: "/water-heater-services-hollywood" },
-      { label: "Beverly Hills", href: "/water-heater-services-beverly-hills" },
-      { label: "Santa Monica", href: "/water-heater-services-santa-monica" },
-      { label: "Pasadena", href: "/water-heater-services-pasadena" },
-      { label: "Burbank", href: "/water-heater-services-burbank" },
-      { label: "Glendale", href: "/water-heater-services-glendale" },
-    ],
-  },
-  { label: "Financing", href: "/financing" },
-  { label: "About", href: "/about" },
-  { label: "FAQ", href: "/faq" },
-];
-
-export function Header({ site }: { site: SiteData }) {
+export function Header({ site, nav, cta }: { site: SiteData; nav: NavItem[]; cta: string }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hover, setHover] = useState<string | null>(null);
@@ -121,7 +81,7 @@ export function Header({ site }: { site: SiteData }) {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex">
-            {NAV.map(item => (
+            {nav.map(item => (
               <div
                 key={item.label}
                 className="relative"
@@ -223,7 +183,7 @@ export function Header({ site }: { site: SiteData }) {
               <a href={site.phoneTel}><Phone className="h-5 w-5" /> Call {site.phoneDisplay}</a>
             </Button>
             <Button asChild size="lg" variant="default" className="w-full">
-              <Link href="/contact" onClick={() => setOpen(false)}>Get a Free Quote</Link>
+              <Link href="/contact" onClick={() => setOpen(false)}>{cta}</Link>
             </Button>
           </div>
 
@@ -242,7 +202,7 @@ export function Header({ site }: { site: SiteData }) {
 
           {/* Nav links */}
           <nav className="mt-5 divide-y divide-ink/5">
-            {NAV.map(item => (
+            {nav.map(item => (
               <div key={item.label}>
                 <div className="flex items-center justify-between">
                   <Link

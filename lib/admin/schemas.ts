@@ -94,6 +94,37 @@ export const SCHEMAS: Record<string, Schema> = {
       ]},
     ],
   },
+  layout: {
+    key: "layout",
+    title: "Header & Footer",
+    fields: [
+      { name: "nav", label: "Navigation items", type: "repeatable", of: [
+        { name: "label", label: "Label", type: "text" },
+        { name: "href", label: "Link (href)", type: "text" },
+        { name: "children", label: "Dropdown links", type: "repeatable", of: [
+          { name: "label", label: "Label", type: "text" },
+          { name: "href", label: "Link (href)", type: "text" },
+          { name: "desc", label: "Description", type: "text" },
+        ]},
+      ]},
+      { name: "headerCta", label: "Header CTA button label", type: "text" },
+      { name: "footer", label: "Footer", type: "group", of: [
+        { name: "blurb", label: "Footer blurb / description", type: "textarea" },
+        { name: "columns", label: "Footer columns", type: "repeatable", of: [
+          { name: "heading", label: "Column heading", type: "text" },
+          { name: "links", label: "Links", type: "repeatable", of: [
+            { name: "label", label: "Label", type: "text" },
+            { name: "href", label: "Link (href)", type: "text" },
+          ]},
+        ]},
+        { name: "legal", label: "Legal / copyright line (after © year name.)", type: "text" },
+        { name: "legalLinks", label: "Legal links", type: "repeatable", of: [
+          { name: "label", label: "Label", type: "text" },
+          { name: "href", label: "Link (href)", type: "text" },
+        ]},
+      ]},
+    ],
+  },
   site: {
     key: "site",
     title: "Site Settings",
