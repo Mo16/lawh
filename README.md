@@ -147,12 +147,53 @@ Built mobile-first with:
 - **Promo strip** at top with rebate offer + financing link
 - **Sticky mobile CTA** ensures phone always 1 tap away
 
-## Customization
+## Admin / CMS
 
-Edit `data/site.ts` to update:
-- Phone, email, address
-- Rating, review count
-- Founding year
+The site has a built-in CMS. Log in at **`/admin`** to edit the text and images on **every page** through simple forms — no code or database required.
 
-Edit `data/services.ts`, `data/locations.ts`, `data/brands.ts` to add/edit content.
+### Setup
+
+1. Copy `.env.example` to `.env.local` and set both values:
+   ```
+   ADMIN_PASSWORD=your-strong-password
+   SESSION_SECRET=a-long-random-string-at-least-32-characters
+   ```
+2. Run the site with `npm run dev` (or `npm run build && npm start`).
+3. Visit `/admin`, enter the password, and edit away. Saves go live immediately.
+
+### What you can edit
+
+| In the admin | Controls |
+|---|---|
+| **Site Settings** | Phone, email, address, hours, rating, review count, trust badges (used site-wide) |
+| **Pages** | Homepage, About, Contact, Financing, FAQ intro, Privacy, Terms, Service Areas, Blog, and the hub pages (Commercial, Residential, Tankless, Water Heater Services) |
+| **Services / Locations / Brands** | Every service, location, and brand page (headings, copy, lists, hero images, icons) |
+| **FAQs** | All FAQ question/answer groups |
+| **Reviews** | Customer testimonials |
+| **Shared Sections** | Trust bar, process steps, why-us, reviews heading, stats, emergency strips, final CTA, service-areas grid |
+| **Header & Footer** | Navigation links and footer columns/links |
+| **Images** | Every image field can be uploaded from your computer **or** set by pasting a URL |
+
+### How it works
+
+- **Content store:** all editable content lives in `/content/*.json` (e.g. `site.json`, `services.json`, `content/pages/home.json`). The admin writes to these files.
+- **Reads:** `lib/content.ts` reads the JSON fresh on every request (`unstable_noStore`), so edits appear immediately — every page is server-rendered on demand.
+- **Auth:** a single shared password (`ADMIN_PASSWORD`) issues a signed, HttpOnly session cookie (HMAC via Web Crypto — no database, no extra dependencies). `middleware.ts` protects all `/admin` and `/api/admin` routes.
+- **Uploads:** saved to `/public/uploads` (image types only, ≤ 8 MB, randomized filenames).
+
+### Important: hosting requirement
+
+The CMS writes to JSON files on disk, so it needs a **persistent filesystem** — `npm run dev`/`npm start`, a VPS, Render/Railway with a disk, Docker with a volume, etc. It will **not** persist on serverless/static hosting (Vercel/Netlify free tier). To deploy there, the storage layer would need to move to a database such as Supabase.
+
+### Tests
+
+```bash
+node --test test/*.test.ts   # auth, content store, icon registry, content layer (14 tests)
+```
+(Use the `test/*.test.ts` glob, not a bare `test/` directory.)
+
+### Advanced (editing JSON directly)
+
+You can also hand-edit the files under `/content` instead of using the admin UI. Note: `data/*.ts` now holds only the TypeScript **types** — the values live in `/content`.
+
 # lawh
