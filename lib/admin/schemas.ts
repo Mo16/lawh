@@ -115,6 +115,7 @@ export const SCHEMAS: Record<string, Schema> = {
           { name: "links", label: "Links", type: "repeatable", of: [
             { name: "label", label: "Label", type: "text" },
             { name: "href", label: "Link (href)", type: "text" },
+            { name: "highlight", label: "Highlight link", type: "boolean" },
           ]},
         ]},
         { name: "legal", label: "Legal / copyright line (after © year name.)", type: "text" },

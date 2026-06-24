@@ -8,6 +8,7 @@ const CARDS = [
   { href: "/admin/locations", title: "Locations", desc: "All service-area pages" },
   { href: "/admin/brands", title: "Brands", desc: "All brand pages" },
   { href: "/admin/faqs", title: "FAQs", desc: "Frequently asked questions" },
+  { href: "/admin/reviews", title: "Reviews", desc: "Customer testimonials" },
   { href: "/admin/sections", title: "Shared Sections", desc: "Trust bar, process, reviews, CTAs" },
   { href: "/admin/layout-content", title: "Header & Footer", desc: "Navigation and footer content" },
 ];

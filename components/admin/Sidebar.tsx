@@ -8,6 +8,7 @@ const LINKS: { href: string; label: string }[] = [
   { href: "/admin/locations", label: "Locations" },
   { href: "/admin/brands", label: "Brands" },
   { href: "/admin/faqs", label: "FAQs" },
+  { href: "/admin/reviews", label: "Reviews" },
   { href: "/admin/sections", label: "Shared Sections" },
   { href: "/admin/layout-content", label: "Header & Footer" },
 ];
