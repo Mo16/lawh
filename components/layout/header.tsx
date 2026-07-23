@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import type { SiteData } from "@/data/site";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
+import { YelpIcon } from "@/components/ui/yelp-icon";
 
 interface NavChild { label: string; href: string; desc?: string; }
 interface NavItem { label: string; href: string; children?: NavChild[]; }
@@ -51,13 +52,20 @@ export function Header({ site, nav, cta }: { site: SiteData; nav: NavItem[]; cta
             <span className="flex items-center gap-1.5"><ShieldCheck className="h-3 w-3 text-primary-300" /> Licensed</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1">
+            <a
+              href={site.social.yelp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 transition-opacity hover:opacity-80"
+              aria-label={`${site.rating} out of 5 from ${site.reviewCount}+ reviews on Yelp`}
+            >
               <span className="flex">
                 {[1, 2, 3, 4, 5].map(i => <Star key={i} className="h-3 w-3 fill-cta-400 text-cta-400" />)}
               </span>
               <span className="ml-1 font-semibold text-white">{site.rating}</span>
               <span className="text-white/60">/5 ({site.reviewCount}+ reviews)</span>
-            </span>
+              <YelpIcon className="ml-1 h-3.5 w-3.5 text-[#d32323]" />
+            </a>
             <a href={site.phoneTel} className="flex items-center gap-1.5 font-semibold text-white">
               <Phone className="h-3.5 w-3.5 text-cta-400" /> {site.phone}
             </a>
@@ -192,9 +200,15 @@ export function Header({ site, nav, cta }: { site: SiteData; nav: NavItem[]; cta
             <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700">
               ⚡ 30-Min Response
             </span>
-            <span className="rounded-full bg-cta-50 px-3 py-1 text-xs font-semibold text-cta-700">
-              ★ {site.rating}/5 · {site.reviewCount}+ reviews
-            </span>
+            <a
+              href={site.social.yelp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-cta-50 px-3 py-1 text-xs font-semibold text-cta-700"
+            >
+              <YelpIcon className="h-3.5 w-3.5 text-[#d32323]" />
+              {site.rating}/5 · {site.reviewCount}+ Yelp reviews
+            </a>
             <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
               🛡️ Licensed
             </span>

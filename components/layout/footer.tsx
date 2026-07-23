@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Clock, ShieldCheck, Star, Facebook } from "lucide-
 import { getSite, getLocations, getLayout } from "@/lib/content";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
+import { YelpIcon } from "@/components/ui/yelp-icon";
 
 export async function Footer() {
   const [SITE, locations, layout] = await Promise.all([getSite(), getLocations(), getLayout()]);
@@ -37,6 +38,15 @@ export async function Footer() {
                   <span>{SITE.address.full}</span>
                 </div>
               </div>
+              <a
+                href={SITE.social.yelp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#d32323] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#b31d1d]"
+              >
+                <YelpIcon className="h-4 w-4" />
+                <span>Read our {SITE.rating}★ reviews on Yelp</span>
+              </a>
             </div>
 
             {/* Tank services */}
