@@ -13,7 +13,7 @@
     "hero": {
       "headline": "Los Angeles' #1 Rated Water Heater Specialists",
       "subheadline": "Same-day installation, repair, and replacement for tank water heaters. All major brands. Licensed, insured, and 24/7 emergency ready.",
-      "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0447.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -105,7 +105,7 @@
     "hero": {
       "headline": "Same-Day Water Heater Installation",
       "subheadline": "New tank water heater installed today. Free in-home estimate, upfront pricing, fully permitted, and code-compliant.",
-      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0651.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -213,7 +213,7 @@
     "hero": {
       "headline": "Same-Day Water Heater Repair",
       "subheadline": "No hot water? Tank leaking? Strange noises? Our licensed plumbers diagnose and fix it — usually in a single visit.",
-      "image": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0450.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -318,7 +318,7 @@
     "hero": {
       "headline": "Same-Day Water Heater Replacement",
       "subheadline": "Aging unit failing? We swap it for a new energy-efficient model — usually in a single afternoon.",
-      "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0448.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -434,7 +434,7 @@
     "hero": {
       "headline": "Annual Water Heater Tune-Up",
       "subheadline": "Catch problems before they become emergencies. Our annual maintenance extends your water heater's life by 5+ years and saves on energy.",
-      "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0446.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -526,7 +526,7 @@
     "hero": {
       "headline": "Water Heater Emergency? We're On the Way.",
       "subheadline": "30-minute average response, 24/7. Burst tanks, no hot water, gas leaks — we handle it all immediately.",
-      "image": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0453.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -618,7 +618,7 @@
     "hero": {
       "headline": "Endless Hot Water. Half the Bills.",
       "subheadline": "Tankless water heater installation, repair, and conversion. Save up to $1,900 in rebates. We handle the paperwork.",
-      "image": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0660.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -710,7 +710,7 @@
     "hero": {
       "headline": "Tankless Installation Done Right",
       "subheadline": "Endless hot water, 30% lower bills, 20+ year lifespan. Professional installation with full rebate handling.",
-      "image": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0243.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -819,7 +819,7 @@
     "hero": {
       "headline": "Same-Day Tankless Repair",
       "subheadline": "Error code on the display? No hot water? We repair Navien, Rinnai, Noritz, Takagi, and more — usually in one visit.",
-      "image": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0652.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -911,7 +911,7 @@
     "hero": {
       "headline": "Same-Day Tankless Replacement",
       "subheadline": "When repair stops making sense, we swap your old tankless for a new high-efficiency unit — usually in a single visit.",
-      "image": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0661.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -1003,7 +1003,7 @@
     "hero": {
       "headline": "Annual Tankless Descaling Service",
       "subheadline": "LA's hard water is hard on tankless units. Our annual descaling service keeps your unit running peak — and keeps your warranty valid.",
-      "image": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0649.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -1095,7 +1095,7 @@
     "hero": {
       "headline": "Commercial Water Heater Specialists",
       "subheadline": "Restaurants, hotels, gyms, apartments. We minimize downtime with after-hours service and emergency capacity.",
-      "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0455.jpg"
     },
     "problemSolution": {
       "problems": [
@@ -1187,7 +1187,7 @@
     "hero": {
       "headline": "Trusted by 819+ LA Homeowners",
       "subheadline": "Whether you need a quick repair, full replacement, or upgrade to tankless — we're the team thousands of LA homeowners trust.",
-      "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1600&h=1000&fit=crop&q=80"
+      "image": "/assets/img/work/IMG_0237.jpg"
     },
     "problemSolution": {
       "problems": [

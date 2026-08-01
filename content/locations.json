@@ -23,7 +23,7 @@
       "Beverly Hills"
     ],
     "population": "85,000+",
-    "image": "https://images.unsplash.com/photo-1597067489486-1ed7e0aedd95?w=1600&h=900&fit=crop&q=80",
+    "image": "/assets/img/work/IMG_0250.jpg",
     "coordinates": {
       "lat": 34.0928,
       "lng": -118.3287
@@ -53,7 +53,7 @@
       "Brentwood"
     ],
     "population": "32,000+",
-    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&h=900&fit=crop&q=80",
+    "image": "/assets/img/work/IMG_0247.jpg",
     "coordinates": {
       "lat": 34.0736,
       "lng": -118.4004
@@ -85,7 +85,7 @@
       "Brentwood"
     ],
     "population": "93,000+",
-    "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1600&h=900&fit=crop&q=80",
+    "image": "/assets/img/work/IMG_0242.jpg",
     "coordinates": {
       "lat": 34.0195,
       "lng": -118.4912
@@ -118,7 +118,7 @@
       "Glendale"
     ],
     "population": "138,000+",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=900&fit=crop&q=80",
+    "image": "/assets/img/work/IMG_0251.jpg",
     "coordinates": {
       "lat": 34.1478,
       "lng": -118.1445
@@ -150,7 +150,7 @@
       "Studio City"
     ],
     "population": "107,000+",
-    "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&h=900&fit=crop&q=80",
+    "image": "/assets/img/work/IMG_0240.jpg",
     "coordinates": {
       "lat": 34.1808,
       "lng": -118.309
@@ -183,7 +183,7 @@
       "Atwater Village"
     ],
     "population": "196,000+",
-    "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&h=900&fit=crop&q=80",
+    "image": "/assets/img/work/IMG_0241.jpg",
     "coordinates": {
       "lat": 34.1425,
       "lng": -118.2551

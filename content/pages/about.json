@@ -4,8 +4,8 @@
     "headline": "LA's Trusted",
     "highlight": "Water Heater Experts",
     "subheadline": "Since 2008, we've installed and serviced thousands of water heaters across Los Angeles. Family-owned, locally operated, and obsessed with doing right by our customers.",
-    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&h=1000&fit=crop&q=80",
-    "imageAlt": "LA Water Heaters team",
+    "image": "/assets/img/work/IMG_0245.jpg",
+    "imageAlt": "LA Water Heaters technician installing a tankless water heater",
     "bullets": [
       "Family-owned since 2008",
       "819+ five-star reviews",
@@ -15,7 +15,7 @@
   },
   "storySection": {
     "badge": "Our Story",
-    "image": "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1200&h=1500&fit=crop&q=80",
+    "image": "/assets/img/work/IMG_0452.jpg",
     "imageAlt": "LA Water Heaters technician servicing a water heater",
     "paragraph1": "LA Water Heaters started in 2008 with a simple goal: be the water heater company we'd want to call ourselves. No phone trees, no upsells, no surprise charges — just licensed plumbers showing up on time and fixing what's broken.",
     "paragraph2": "Over the years, we've grown from a one-truck operation in Studio City to a fully-staffed team serving every neighborhood in Los Angeles. We've installed every brand from Rheem to Navien, fixed every issue from dead pilot lights to flooded basements, and built relationships with thousands of LA homeowners along the way.",
@@ -25,7 +25,7 @@
     "badge": "Our Team",
     "paragraph": "Licensed plumbers, master technicians, and the friendly office team that picks up when you call.",
     "founder": {
-      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&h=1100&fit=crop&q=80",
+      "image": "/assets/img/work/IMG_0653.jpg",
       "imageAlt": "Zohrab Grigoriyan, founder of LA Water Heaters",
       "badge": "Founder & Master Plumber",
       "name": "Zohrab Grigoriyan",
