@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Tankless Water Heater Installation in Los Angeles",
-  description: "Tankless water heater installation in LA. Same-day. All major brands. Up to $1,900 in rebates. Call (818) 555-0173.",
+  description: "Tankless water heater installation in LA. Same-day. All major brands. Up to $1,900 in rebates. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/tankless-water-heater-installation" },
   openGraph: {
     title: "Tankless Water Heater Installation in Los Angeles",
-    description: "Tankless water heater installation in LA. Same-day. All major brands. Up to $1,900 in rebates. Call (818) 555-0173.",
+    description: "Tankless water heater installation in LA. Same-day. All major brands. Up to $1,900 in rebates. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/tankless-water-heater-installation",
     type: "website",
   },

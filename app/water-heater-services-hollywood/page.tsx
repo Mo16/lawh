@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Hollywood, CA",
-  description: "Water heater services in Hollywood, CA. Same-day install, repair, replacement. 30-min response. Call (818) 555-0173.",
+  description: "Water heater services in Hollywood, CA. Same-day install, repair, replacement. 30-min response. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-services-hollywood" },
   openGraph: {
     title: "Water Heater Services in Hollywood, CA",
-    description: "Water heater services in Hollywood, CA. Same-day install, repair, replacement. 30-min response. Call (818) 555-0173.",
+    description: "Water heater services in Hollywood, CA. Same-day install, repair, replacement. 30-min response. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-services-hollywood",
     type: "website",
   },

@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Tankless Water Heater Repair in Los Angeles",
-  description: "Tankless water heater repair in LA. Same-day repair for Navien, Rinnai, Noritz, Takagi. Call (818) 555-0173.",
+  description: "Tankless water heater repair in LA. Same-day repair for Navien, Rinnai, Noritz, Takagi. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/tankless-water-heater-repair" },
   openGraph: {
     title: "Tankless Water Heater Repair in Los Angeles",
-    description: "Tankless water heater repair in LA. Same-day repair for Navien, Rinnai, Noritz, Takagi. Call (818) 555-0173.",
+    description: "Tankless water heater repair in LA. Same-day repair for Navien, Rinnai, Noritz, Takagi. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/tankless-water-heater-repair",
     type: "website",
   },

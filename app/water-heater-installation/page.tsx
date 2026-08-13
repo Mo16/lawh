@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Installation in Los Angeles",
-  description: "Water heater installation in Los Angeles. Same-day. All brands, all sizes. Free estimate. Call (818) 555-0173.",
+  description: "Water heater installation in Los Angeles. Same-day. All brands, all sizes. Free estimate. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-installation" },
   openGraph: {
     title: "Water Heater Installation in Los Angeles",
-    description: "Water heater installation in Los Angeles. Same-day. All brands, all sizes. Free estimate. Call (818) 555-0173.",
+    description: "Water heater installation in Los Angeles. Same-day. All brands, all sizes. Free estimate. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-installation",
     type: "website",
   },

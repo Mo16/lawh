@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Tankless Water Heater Maintenance & Descaling in LA",
-  description: "Tankless water heater maintenance in LA. Annual descaling, filter cleaning. Required for warranty. Call (818) 555-0173.",
+  description: "Tankless water heater maintenance in LA. Annual descaling, filter cleaning. Required for warranty. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/tankless-water-heater-maintenance" },
   openGraph: {
     title: "Tankless Water Heater Maintenance & Descaling in LA",
-    description: "Tankless water heater maintenance in LA. Annual descaling, filter cleaning. Required for warranty. Call (818) 555-0173.",
+    description: "Tankless water heater maintenance in LA. Annual descaling, filter cleaning. Required for warranty. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/tankless-water-heater-maintenance",
     type: "website",
   },

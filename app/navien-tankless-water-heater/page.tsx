@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Navien Tankless Water Heater Services in LA",
-  description: "Navien tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (818) 555-0173.",
+  description: "Navien tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/navien-tankless-water-heater" },
   openGraph: {
     title: "Navien Tankless Water Heater Services in LA",
-    description: "Navien tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (818) 555-0173.",
+    description: "Navien tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/navien-tankless-water-heater",
     type: "website",
   },

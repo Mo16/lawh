@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Emergency Water Heater Repair — 24/7 Service in LA",
-  description: "24/7 emergency water heater repair in Los Angeles. 30-minute response. Burst tanks, leaks, no hot water. Call (818) 555-0173 now.",
+  description: "24/7 emergency water heater repair in Los Angeles. 30-minute response. Burst tanks, leaks, no hot water. Call (747) 350-8002 now.",
   alternates: { canonical: "https://lawaterheaters.com/emergency-water-heater-repair" },
   openGraph: {
     title: "Emergency Water Heater Repair — 24/7 Service in LA",
-    description: "24/7 emergency water heater repair in Los Angeles. 30-minute response. Burst tanks, leaks, no hot water. Call (818) 555-0173 now.",
+    description: "24/7 emergency water heater repair in Los Angeles. 30-minute response. Burst tanks, leaks, no hot water. Call (747) 350-8002 now.",
     url: "https://lawaterheaters.com/emergency-water-heater-repair",
     type: "website",
   },

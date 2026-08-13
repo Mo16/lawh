@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Beverly Hills, CA",
-  description: "Premium water heater services in Beverly Hills. White-glove installation, smart-home integration. Call (818) 555-0173.",
+  description: "Premium water heater services in Beverly Hills. White-glove installation, smart-home integration. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-services-beverly-hills" },
   openGraph: {
     title: "Water Heater Services in Beverly Hills, CA",
-    description: "Premium water heater services in Beverly Hills. White-glove installation, smart-home integration. Call (818) 555-0173.",
+    description: "Premium water heater services in Beverly Hills. White-glove installation, smart-home integration. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-services-beverly-hills",
     type: "website",
   },

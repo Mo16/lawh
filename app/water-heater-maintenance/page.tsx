@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Maintenance & Tune-Up in Los Angeles",
-  description: "Water heater maintenance in Los Angeles. Annual flush, anode rod check, full inspection. Call (818) 555-0173.",
+  description: "Water heater maintenance in Los Angeles. Annual flush, anode rod check, full inspection. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-maintenance" },
   openGraph: {
     title: "Water Heater Maintenance & Tune-Up in Los Angeles",
-    description: "Water heater maintenance in Los Angeles. Annual flush, anode rod check, full inspection. Call (818) 555-0173.",
+    description: "Water heater maintenance in Los Angeles. Annual flush, anode rod check, full inspection. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-maintenance",
     type: "website",
   },

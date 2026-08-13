@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Replacement in Los Angeles",
-  description: "Water heater replacement in Los Angeles. Same-day swap. Energy-efficient new units. Old unit removed. Call (818) 555-0173.",
+  description: "Water heater replacement in Los Angeles. Same-day swap. Energy-efficient new units. Old unit removed. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-replacement" },
   openGraph: {
     title: "Water Heater Replacement in Los Angeles",
-    description: "Water heater replacement in Los Angeles. Same-day swap. Energy-efficient new units. Old unit removed. Call (818) 555-0173.",
+    description: "Water heater replacement in Los Angeles. Same-day swap. Energy-efficient new units. Old unit removed. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-replacement",
     type: "website",
   },

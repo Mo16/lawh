@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Rinnai Tankless Water Heater Services in LA",
-  description: "Rinnai tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (818) 555-0173.",
+  description: "Rinnai tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/rinnai-tankless-water-heater" },
   openGraph: {
     title: "Rinnai Tankless Water Heater Services in LA",
-    description: "Rinnai tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (818) 555-0173.",
+    description: "Rinnai tankless water heater installation and repair in LA. Authorized installer. Up to $1,900 in rebates. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/rinnai-tankless-water-heater",
     type: "website",
   },

@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "A.O. Smith Water Heater Installation & Repair in LA",
-  description: "A.O. Smith water heater installation and repair in Los Angeles. Authorized installer. Call (818) 555-0173.",
+  description: "A.O. Smith water heater installation and repair in Los Angeles. Authorized installer. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/ao-smith-water-heater" },
   openGraph: {
     title: "A.O. Smith Water Heater Installation & Repair in LA",
-    description: "A.O. Smith water heater installation and repair in Los Angeles. Authorized installer. Call (818) 555-0173.",
+    description: "A.O. Smith water heater installation and repair in Los Angeles. Authorized installer. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/ao-smith-water-heater",
     type: "website",
   },

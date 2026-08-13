@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Burbank, CA",
-  description: "Water heater services in Burbank. Same-day install, family home specialists. Call (818) 555-0173.",
+  description: "Water heater services in Burbank. Same-day install, family home specialists. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-services-burbank" },
   openGraph: {
     title: "Water Heater Services in Burbank, CA",
-    description: "Water heater services in Burbank. Same-day install, family home specialists. Call (818) 555-0173.",
+    description: "Water heater services in Burbank. Same-day install, family home specialists. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-services-burbank",
     type: "website",
   },

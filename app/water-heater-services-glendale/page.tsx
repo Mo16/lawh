@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Glendale, CA",
-  description: "Water heater services in Glendale. Hillside specialists, multi-family experts. Call (818) 555-0173.",
+  description: "Water heater services in Glendale. Hillside specialists, multi-family experts. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-services-glendale" },
   openGraph: {
     title: "Water Heater Services in Glendale, CA",
-    description: "Water heater services in Glendale. Hillside specialists, multi-family experts. Call (818) 555-0173.",
+    description: "Water heater services in Glendale. Hillside specialists, multi-family experts. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-services-glendale",
     type: "website",
   },

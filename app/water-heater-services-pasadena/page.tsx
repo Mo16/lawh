@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Pasadena, CA",
-  description: "Water heater services in Pasadena. Craftsman home specialists, hard water descaling. Call (818) 555-0173.",
+  description: "Water heater services in Pasadena. Craftsman home specialists, hard water descaling. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/water-heater-services-pasadena" },
   openGraph: {
     title: "Water Heater Services in Pasadena, CA",
-    description: "Water heater services in Pasadena. Craftsman home specialists, hard water descaling. Call (818) 555-0173.",
+    description: "Water heater services in Pasadena. Craftsman home specialists, hard water descaling. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/water-heater-services-pasadena",
     type: "website",
   },

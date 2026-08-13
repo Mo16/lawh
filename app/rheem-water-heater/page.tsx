@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Rheem Water Heater Installation & Repair in LA",
-  description: "Rheem water heater installation and repair in Los Angeles. Authorized installer. Same-day service. Call (818) 555-0173.",
+  description: "Rheem water heater installation and repair in Los Angeles. Authorized installer. Same-day service. Call (747) 350-8002.",
   alternates: { canonical: "https://lawaterheaters.com/rheem-water-heater" },
   openGraph: {
     title: "Rheem Water Heater Installation & Repair in LA",
-    description: "Rheem water heater installation and repair in Los Angeles. Authorized installer. Same-day service. Call (818) 555-0173.",
+    description: "Rheem water heater installation and repair in Los Angeles. Authorized installer. Same-day service. Call (747) 350-8002.",
     url: "https://lawaterheaters.com/rheem-water-heater",
     type: "website",
   },
