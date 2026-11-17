@@ -119,8 +119,8 @@ export default async function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 34.1425,
-      longitude: -118.3963,
+      latitude: 34.175,
+      longitude: -118.406,
     },
     areaServed: [
       { "@type": "City", name: "Los Angeles" },
